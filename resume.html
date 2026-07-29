@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Karina Gessel Esquivel | Portfolio</title>
+
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+
+    <!-- Lucide Icons -->
+    <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js"></script>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Fraunces:opsz,wght@9.144,600;9.144,700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body
+  data-template-id="__page-root"
+  class="w-full min-h-screen grain"
+  style="background: linear-gradient(rgb(7, 20, 23), rgb(9, 25, 29));"
+>
+
+  <div class="w-full">
+
+    <!----------------HEADER------------------->
+    <header
+      class="sticky top-0 z-50 w-full border-b border-white/10 bg-gradient-to-b from-[#0c1f23] to-[#09191d] backdrop-blur-md"
+    >
+      <div
+        class="max-w-[1400px] mx-auto px-6 lg:px-10 py-5 flex items-center justify-between gap-6"
+      >
+
+        <!-- Brand -->
+        <div class="flex items-center gap-3">
+          <div class="w-2.5 h-2.5 rounded-full bg-[#8dd4c5]"></div>
+
+          <p
+            class="uppercase tracking-[0.28em] text-xs text-[#b7c5c7]"
+          >
+            Karina Esquivel
+          </p>
+        </div>
+
+
+        <!-- Resume Actions -->
+        <div class="hidden md:flex items-center gap-4">
+
+          <a
+            href="assets/resume/Karina Esquivel Resume_06152026.pdf"
+            download
+            class="px-4 py-2 rounded-full border border-white/15 text-xs uppercase tracking-[0.18em] text-[#d7e4e4] hover:border-[#8dd4c5]/60 transition"
+          >
+            Download Resume
+          </a>
+
+
+          <a
+            href="index.html"
+            class="px-4 py-2 rounded-full border border-white/15 text-xs uppercase tracking-[0.18em] text-[#d7e4e4] hover:border-[#8dd4c5]/60 transition"
+          >
+            ← Back Home
+          </a>
+
+        </div>
+
+      </div>
+    </header>
+
+
+    <!----------------MAIN CONTENT------------------->
+    <main class="w-full">
+
+      <section
+        class="max-w-[1200px] mx-auto px-6 lg:px-10 pt-12 lg:pt-16 pb-20"
+      >
+
+        <!-- Title -->
+        <div class="mb-10">
+
+          <p
+            class="uppercase tracking-[0.28em] text-xs text-[#6f8d92] mb-4"
+          >
+            Professional Profile
+          </p>
+
+
+          <h1
+            class="text-5xl lg:text-6xl text-[#d7e4e4] font-bold mb-5"
+          >
+            Resume
+          </h1>
+
+
+          <p
+            class="max-w-2xl text-[#9db1b4] text-lg"
+          >
+            View my professional resume below or download a PDF copy.
+          </p>
+
+        </div>
+
+
+        <!-- PDF Viewer -->
+        <div
+          class="rounded-2xl overflow-hidden border border-white/10 bg-white/[0.02]"
+        >
+
+          <iframe
+            src="assets/resume/Karina Esquivel Resume_06152026.pdf"
+            class="w-full h-[1000px]"
+            title="Karina Esquivel Resume"
+          ></iframe>
+
+        </div>
+
+
+      </section>
+
+    </main>
+
+
+  </div>
+
+
+  <!-- Scripts -->
+  <script>
+    lucide.createIcons();
+  </script>
+
+
+</body>

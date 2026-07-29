@@ -1,79 +1,66 @@
 lucide.createIcons();
 const resumeView = document.getElementById('resume-view');
 const workView = document.getElementById('work-view');
-const caseStudyView = document.getElementById('case-study-view');
 const resumeNav = document.getElementById('resume-nav');
 const headerBackButton = document.getElementById('header-back-button');
 const viewWorkButton = document.getElementById('view-work-button');
 const workCtaButton = document.getElementById('work-cta-button');
-const caseStudyBackButton = document.getElementById('case-study-back-button');
-// Map card IDs to case study data
-const caseStudyData =  {
-  1: 'bridge-dashboard',
-  2: 'asset-dashboard',
-  3: 'performance-tracker',
-  4: 'scheduling-engine',
-  5: 'arcgis-integration'
-}
-;
+const brandName = document.getElementById("brand-name");
+
 function showWorkView()  {
   resumeView.classList.add('view-hidden');
   workView.classList.remove('view-hidden');
-  caseStudyView.classList.add('view-hidden');
-  resumeNav.classList.add('hidden');
+  resumeNav.style.display = 'none';
   headerBackButton.classList.remove('hidden');
   headerBackButton.classList.add('inline-flex');
+  brandName.textContent = "Portfolio";
   window.scrollTo( {
-    top: 0, behavior: 'smooth'
-  }
-  );
+    top: 0, 
+    behavior: 'smooth'
+  });
 }
-function showResumeView(targetId)  {
+function showResumeView(targetId) {
   workView.classList.add('view-hidden');
-  caseStudyView.classList.add('view-hidden');
   resumeView.classList.remove('view-hidden');
-  resumeNav.classList.remove('hidden');
+  resumeNav.style.display = '';
   headerBackButton.classList.add('hidden');
   headerBackButton.classList.remove('inline-flex');
-  if (targetId)  {
-    requestAnimationFrame(() =>  {
+  brandName.textContent = 'Karina Esquivel';
+
+  if (targetId) {
+    requestAnimationFrame(() => {
       const target = document.getElementById(targetId);
-      if (target) target.scrollIntoView( {
-        behavior: 'smooth', block: 'start'
+
+      if (target) {
+        target.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
       }
-      );
-    }
-    );
-  } else  {
-    window.scrollTo( {
-      top: 0, behavior: 'smooth'
-    }
-    );
+    });
+  } else {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
   }
 }
-function showCaseStudyView(cardNumber)  {
-  resumeView.classList.add('view-hidden');
-  workView.classList.add('view-hidden');
-  caseStudyView.classList.remove('view-hidden');
-  resumeNav.classList.add('hidden');
-  headerBackButton.classList.remove('hidden');
-  headerBackButton.classList.add('inline-flex');
-  window.scrollTo( {
-    top: 0, behavior: 'smooth'
-  }
-  );
+
+if (viewWorkButton) {
+  viewWorkButton.addEventListener('click', showWorkView);
 }
-// Add click handlers to work cards
-for (let i = 1; i <= 5; i++)  {
-  const button = document.getElementById(`work-card-button-${i}`);
-  if (button)  {
-    button.addEventListener('click', () => showCaseStudyView(i));
-  }
+
+if (headerBackButton) {
+  headerBackButton.addEventListener('click', () => {
+    showResumeView('overview');
+  });
 }
-viewWorkButton.addEventListener('click', showWorkView);
-headerBackButton.addEventListener('click', showWorkView);
-workCtaButton.addEventListener('click', () => showResumeView());
-caseStudyBackButton.addEventListener('click', showWorkView);
+
+if (workCtaButton) {
+  workCtaButton.addEventListener('click', () => {
+    showResumeView();
+  });
+}
 const timelineExpandButton = document.getElementById('timeline-expand-button');
 const timelineExpandedJobs = document.getElementById('timeline-expanded-jobs');
 if (timelineExpandButton)  {
@@ -110,3 +97,63 @@ document.querySelectorAll('a[href^="#"]').forEach(link =>  {
   );
 }
 );
+// ---------------------------------------------
+// SIDE NAVIGATION SCROLL HIGHLIGHT
+// ---------------------------------------------
+
+const sideNavLinks = document.querySelectorAll(
+  ".nav-link[data-section]"
+);
+
+const trackedSections = Array.from(sideNavLinks)
+  .map((link) => document.getElementById(link.dataset.section))
+  .filter(Boolean);
+
+function updateActiveSideNavigation() {
+  if (!trackedSections.length) return;
+
+  // Position below the sticky header where a section becomes active
+  const activationPoint = 200;
+
+  let currentSectionId = trackedSections[0].id;
+
+  trackedSections.forEach((section) => {
+    const sectionTop =
+      section.getBoundingClientRect().top;
+
+    if (sectionTop <= activationPoint) {
+      currentSectionId = section.id;
+    }
+  });
+
+  // Ensure the final section activates near the bottom of the page
+  const nearBottom =
+    window.innerHeight + window.scrollY >=
+    document.documentElement.scrollHeight - 50;
+
+  if (nearBottom) {
+    currentSectionId =
+      trackedSections[trackedSections.length - 1].id;
+  }
+
+  sideNavLinks.forEach((link) => {
+    link.classList.toggle(
+      "active",
+      link.dataset.section === currentSectionId
+    );
+  });
+}
+
+window.addEventListener(
+  "scroll",
+  updateActiveSideNavigation,
+  { passive: true }
+);
+
+window.addEventListener(
+  "resize",
+  updateActiveSideNavigation
+);
+
+// Run once when the script loads
+updateActiveSideNavigation();
