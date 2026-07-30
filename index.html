@@ -1,631 +1,1268 @@
 <!doctype html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <title>Karina Gessel-Esquivel | Portfolio</title>
-        <!-- Tailwind -->
-        <script src="https://cdn.tailwindcss.com/3.4.17">
-        </script>
-        <!-- Lucide Icons -->
-        <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js">
-        </script>
-        <!-- Fonts -->
-        <link rel="preconnect" href="https://fonts.googleapis.com"/>
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-        <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Fraunces:opsz,wght@9.144,600;9.144,700&display=swap" rel="stylesheet"/>
-        <!-- Custom CSS -->
-        <link rel="stylesheet" href="css/style.css"/>
-    </head>
-    <body data-template-id="__page-root" class="w-full min-h-screen grain" style="background: linear-gradient(rgb(7, 20, 23), rgb(9, 25, 29));">
-        <div class="w-full">
-            <!----------------HEADER------------------->
-            <header class="sticky top-0 z-50 w-full border-b border-white/10 bg-gradient-to-b from-[#0c1f23] to-[#09191d] backdrop-blur-md">
-                <div class="max-w-[1400px] mx-auto px-6 lg:px-10 py-5 flex items-center justify-between gap-6">
-                    <div class="flex items-center gap-3">
-                        <div class="w-2.5 h-2.5 rounded-full bg-[#8dd4c5]"></div>
-                        <p
-                          id="brand-name"
-                          data-template-id="brand-name"
-                          class="canva-text uppercase tracking-[0.28em] text-xs text-[#b7c5c7]">
-                          Karina Esquivel
-                        </p>
-                    </div>
-                    <nav id="resume-nav" class="hidden md:flex gap-7 text-xs uppercase tracking-[0.18em] text-[#b7c5c7]">
-                        <a href="#expertise" data-template-id="top-nav-expertise" class="canva-link nav-link-top hover:text-white transition" style="color: rgb(183, 197, 199); font-weight: 500; font-style: normal; font-size: 12px;">Expertise</a> <a href="#journey" data-template-id="top-nav-journey" class="canva-link nav-link-top hover:text-white transition" style="color: rgb(183, 197, 199); font-weight: 500; font-style: normal; font-size: 12px;">Journey</a> <a href="#education" data-template-id="top-nav-education" class="canva-link nav-link-top hover:text-white transition" style="color: rgb(183, 197, 199); font-weight: 500; font-style: normal; font-size: 12px;">Education</a> <a href="#certificates" data-template-id="top-nav-certificates" class="canva-link nav-link-top hover:text-white transition" style="color: rgb(183, 197, 199); font-weight: 500; font-style: normal; font-size: 12px;">Certificates</a>
-                    </nav>
-                    <button id="header-back-button" data-template-id="work-back-button" class="canva-button hidden items-center gap-2 text-xs uppercase tracking-[0.18em] text-[#d7e4e4] border border-white/15 rounded-full px-4 py-2 hover:border-[#8dd4c5]/60 transition" type="button" style="color: rgb(215, 228, 228); font-weight: 400; font-style: normal; font-size: 12px;"> Return Home </button>
-                </div>
-            </header>
-            <main class="w-full">
-                <!---------------RESUME-------------------->
-                <div id="resume-view">
-                    <!---------NAVIGATION SECTION------------------>
-                    <section id="overview" class="max-w-[1400px] mx-auto px-6 lg:px-10 pt-10 lg:pt-16 pb-16 lg:pb-24 grid lg:grid-cols-[220px_1fr] gap-10">
-                        <aside class="desktop-rail">
-                            <div class="fixed top-32 w-[220px] pt-2">
-                                <p data-template-id="rail-label" class="canva-text text-[11px] uppercase tracking-[0.28em] text-[#6f8d92] mb-8" style="color: rgb(111, 141, 146); font-weight: 500; font-style: normal; font-size: 11px; letter-spacing: 0.18rem;">
-                                    Navigate
-                                </p>
-                                <nav class="space-y-5 text-sm text-[#9db1b4]">
-                                    <a href="#overview" class="nav-link active block transition" data-section="overview">Overview</a> <a href="#expertise" class="nav-link block transition" data-section="expertise">Expertise</a> <a href="#journey" class="nav-link block transition" data-section="journey">Journey</a> <a href="#education" class="nav-link block transition" data-section="education">Education</a> <a href="#certificates" class="nav-link block transition" data-section="certificates">Certificates</a>
-                                </nav>
-                            </div>
-                        </aside>
-                        <!--------------OVERVIEW MAIN SECTION----------------->
-                        <div>
-                            <section class="grid xl:grid-cols-[1.08fr_.92fr] gap-8 lg:gap-10 items-stretch">
-                                <div class="reveal">
-                                    <p data-template-id="hero-eyebrow" class="canva-text uppercase tracking-[0.28em] text-xs text-[#8dd4c5] mb-5" style="color: rgb(141, 212, 197); font-weight: 700; font-style: normal; font-size: 12px; letter-spacing: 0.18rem;">
-                                        Power bi • python • Sql • ARcgis
-                                    </p>
-                                    <h1 data-template-id="hero-title" class="canva-text display text-[3.1rem] sm:text-[4.5rem] lg:text-[5.3rem] leading-[0.98] max-w-4xl" style="color: rgb(243, 239, 230); font-weight: 700; font-style: normal; font-size: 32px;">
-                                        Turning complex data into clear direction.
-                                    </h1>
-                                    <p data-template-id="hero-subtitle" class="canva-text mt-6 text-lg md:text-xl text-[#b7c5c7] max-w-2xl leading-8" style="color: rgb(183, 197, 199); font-weight: 400; font-style: normal; font-size: 20px; line-height: 1.6;">
-                                        I design dashboards, automate workflows, and build analytics solutions that help organizations make smarter decisions.
-                                    </p>
-                                    <div class="mt-8 flex flex-wrap gap-3">
-                                        <button id="view-work-button" data-template-id="hero-pill-1" class="canva-button px-4 py-2 rounded-full border border-white/15 text-sm text-[#d7e4e4] bg-white/[0.03] hover:border-[#8dd4c5]/60 transition" type="button"> View My Work </button> <a href="resume.html" data-template-id="hero-pill-2" class="canva-link px-4 py-2 rounded-full border border-white/15 text-sm text-[#d7e4e4] bg-white/[0.03] inline-block hover:border-[#8dd4c5]/60 transition"> View Resume </a> <a href="https://www.linkedin.com/in/karina-gessel-esquivel/" target="_blank" rel="noopener noreferrer" data-template-id="hero-pill-3" class="canva-link px-4 py-2 rounded-full border border-white/15 text-sm text-[#d7e4e4] bg-white/[0.03] inline-block hover:border-[#8dd4c5]/60 transition"> LinkedIn Profile + Connect </a>
-                                    </div>
-                                </div>
-                                <!-------------------KPI SECTION-------------------->
-                                <div class="reveal relative min-h-[420px] overflow-hidden rounded-[28px] border border-white/10 image-mask">
-                                    <img data-template-id="hero-image" loading="lazy" class="canva-image absolute inset-0 w-full h-full object-cover" src="https://images.pexels.com/photos/10325707/pexels-photo-10325707.png" alt="Vibrant orange lines and dots form an abstract network on a dark background, evoking technology and connectivity."/>
-                                    <div class="absolute left-6 right-6 bottom-6 z-10">
-                                        <div class="grid grid-cols-2 gap-3">
-                                            <div data-template-id="metric-card-1" class="canva-card bg-[#0a1a1d]/80 backdrop-blur-sm rounded-2xl p-4 border border-white/10" style="background: rgba(10, 26, 29, 0.8);">
-                                                <p data-template-id="metric-value-1" class="canva-text display text-3xl text-[#8dd4c5]" style="color: rgb(141, 212, 197); font-weight: 700; font-style: normal; font-size: 32px;">
-                                                    $14B
-                                                </p>
-                                                <p data-template-id="metric-label-1" class="canva-text mt-1 text-[11px] uppercase tracking-[0.16em] text-[#b7c5c7]" style="color: rgb(183, 197, 199); font-weight: 500; font-style: normal; font-size: 11px;">
-                                                    Transportation Portfolio Supported
-                                                </p>
-                                            </div>
-                                            <div data-template-id="metric-card-2" class="canva-card bg-[#0a1a1d]/80 backdrop-blur-sm rounded-2xl p-4 border border-white/10" style="background: rgba(10, 26, 29, 0.8);">
-                                                <p data-template-id="metric-value-2" class="canva-text display text-3xl text-[#d8a761]" style="color: rgb(216, 167, 97); font-weight: 700; font-style: normal; font-size: 32px;">
-                                                    Founder
-                                                </p>
-                                                <p data-template-id="metric-label-2" class="canva-text mt-1 text-[11px] uppercase tracking-[0.16em] text-[#b7c5c7]" style="color: rgb(183, 197, 199); font-weight: 500; font-style: normal; font-size: 11px;">
-                                                    Transportation Planning Analystics Group
-                                                </p>
-                                            </div>
-                                            <div data-template-id="metric-card-3" class="canva-card bg-[#0a1a1d]/80 backdrop-blur-sm rounded-2xl p-4 border border-white/10" style="background: rgba(10, 26, 29, 0.8);">
-                                                <p data-template-id="metric-value-3" class="canva-text display text-3xl text-[#8dd4c5]" style="color: rgb(141, 212, 197); font-weight: 700; font-style: normal; font-size: 32px;">
-                                                    1x
-                                                </p>
-                                                <p data-template-id="metric-label-3" class="canva-text mt-1 text-[11px] uppercase tracking-[0.16em] text-[#b7c5c7]" style="color: rgb(183, 197, 199); font-weight: 500; font-style: normal; font-size: 11px;">
-                                                    director's service award
-                                                </p>
-                                            </div>
-                                            <div data-template-id="metric-card-4" class="canva-card bg-[#0a1a1d]/80 backdrop-blur-sm rounded-2xl p-4 border border-white/10" style="background: rgba(10, 26, 29, 0.8);">
-                                                <p data-template-id="metric-value-4" class="canva-text display text-3xl text-[#d8a761]" style="color: rgb(216, 167, 97); font-weight: 700; font-style: normal; font-size: 32px;">
-                                                    2x
-                                                </p>
-                                                <p data-template-id="metric-label-4" class="canva-text mt-1 text-[11px] uppercase tracking-[0.16em] text-[#b7c5c7]" style="color: rgb(183, 197, 199); font-weight: 500; font-style: normal; font-size: 11px;">
-                                                    innovations challenge finalist
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </section>
-                            <!---------------EXPERTISE SECTION------------------>
-                            <section id="expertise" class="pt-24 reveal">
-                                <div class="mb-10">
-                                    <p data-template-id="expertise-eyebrow" class="canva-text uppercase tracking-[0.28em] text-xs text-[#8dd4c5] mb-3" style="color: rgb(141, 212, 197); font-weight: 700; font-style: normal; font-size: 12px; letter-spacing: 0.18rem;">
-                                        Capabilities
-                                    </p>
-                                    <h2 data-template-id="expertise-title" class="canva-text display text-[2.5rem] md:text-[3.5rem] leading-tight" style="color: rgb(243, 239, 230); font-weight: 700; font-style: normal; font-size: 24px;">
-                                        Where analysis becomes action.
-                                    </h2>
-                                    <p data-template-id="expertise-copy" class="canva-text max-w-2xl mt-3 text-[#a9bcbe] leading-7" style="color: rgb(169, 188, 190); font-weight: 400; font-style: normal; font-size: 16px; line-height: 1.6;">
-                                        A toolkit shaped by analytics, systems thinking, and communication — built to make complexity useful.
-                                    </p>
-                                </div>
-                                <div class="grid md:grid-cols-2 xl:grid-cols-4 gap-4">
-                                    <article data-template-id="expertise-card-1" class="canva-card card-hover rounded-2xl border border-white/10 bg-[#10282d] p-5" style="background: rgb(16, 40, 45);">
-                                        <i data-lucide="bar-chart-3" class="w-5 h-5 text-[#8dd4c5]"></i>
-                                        <h3 data-template-id="expertise-card-1-title" class="canva-text mt-4 font-bold text-lg" style="color: rgb(243, 239, 230); font-weight: 700; font-style: normal; font-size: 18px;">
-                                            Insight Systems
-                                        </h3>
-                                        <p data-template-id="expertise-card-1-copy" class="canva-text mt-3 text-sm text-[#b7c5c7] leading-6" style="color: rgb(183, 197, 199); font-weight: 400; font-style: normal; font-size: 14px; line-height: 1.5;">
-                                            Power BI, KPI analysis, reporting, dashboards, data visualization, and stakeholder-ready storytelling.
-                                        </p>
-                                    </article>
-                                    <article data-template-id="expertise-card-2" class="canva-card card-hover rounded-2xl border border-white/10 bg-[#10282d] p-5" style="background: rgb(16, 40, 45);">
-                                        <i data-lucide="workflow" class="w-5 h-5 text-[#d8a761]"></i>
-                                        <h3 data-template-id="expertise-card-2-title" class="canva-text mt-4 font-bold text-lg" style="color: rgb(243, 239, 230); font-weight: 700; font-style: normal; font-size: 18px;">
-                                            Data &amp; Automation
-                                        </h3>
-                                        <p data-template-id="expertise-card-2-copy" class="canva-text mt-3 text-sm text-[#b7c5c7] leading-6" style="color: rgb(183, 197, 199); font-weight: 400; font-style: normal; font-size: 14px; line-height: 1.5;">
-                                            Python, SQL, ETL, forecasting, data modelling, machine learning, and workflow automation.
-                                        </p>
-                                    </article>
-                                    <article data-template-id="expertise-card-3" class="canva-card card-hover rounded-2xl border border-white/10 bg-[#10282d] p-5" style="background: rgb(16, 40, 45);">
-                                        <i data-lucide="map" class="w-5 h-5 text-[#8dd4c5]"></i>
-                                        <h3 data-template-id="expertise-card-3-title" class="canva-text mt-4 font-bold text-lg" style="color: rgb(243, 239, 230); font-weight: 700; font-style: normal; font-size: 18px;">
-                                            Spatial Thinking
-                                        </h3>
-                                        <p data-template-id="expertise-card-3-copy" class="canva-text mt-3 text-sm text-[#b7c5c7] leading-6" style="color: rgb(183, 197, 199); font-weight: 400; font-style: normal; font-size: 14px; line-height: 1.5;">
-                                            ArcGIS, transportation planning, asset management, geospatial analytics, and infrastructure context.
-                                        </p>
-                                    </article>
-                                    <article data-template-id="expertise-card-4" class="canva-card card-hover rounded-2xl border border-white/10 bg-[#10282d] p-5" style="background: rgb(16, 40, 45);">
-                                        <i data-lucide="users" class="w-5 h-5 text-[#d8a761]"></i>
-                                        <h3 data-template-id="expertise-card-4-title" class="canva-text mt-4 font-bold text-lg" style="color: rgb(243, 239, 230); font-weight: 700; font-style: normal; font-size: 18px;">
-                                            Human-Centered Delivery
-                                        </h3>
-                                        <p data-template-id="expertise-card-4-copy" class="canva-text mt-3 text-sm text-[#b7c5c7] leading-6" style="color: rgb(183, 197, 199); font-weight: 400; font-style: normal; font-size: 14px; line-height: 1.5;">
-                                            Project coordination, customer support, cross-functional collaboration, and multilingual communication.
-                                        </p>
-                                    </article>
-                                </div>
-                            </section>
-                            <!---------------RESUME JOURNEY SECTION-------------------->
-                            <section id="journey" class="pt-24 reveal">
-                                <div class="mb-10">
-                                    <p data-template-id="journey-eyebrow" class="canva-text uppercase tracking-[0.28em] text-xs text-[#8dd4c5] mb-3" style="color: rgb(141, 212, 197); font-weight: 700; font-style: normal; font-size: 12px; letter-spacing: 0.18rem;">
-                                        Selected Experience
-                                    </p>
-                                    <h2 data-template-id="journey-title" class="canva-text display text-[2.5rem] md:text-[3.5rem] leading-tight" style="color: rgb(243, 239, 230); font-weight: 700; font-style: normal; font-size: 24px;">
-                                        A path built through curiosity, systems, and impact.
-                                    </h2>
-                                    <p data-template-id="journey-copy" class="canva-text max-w-2xl mt-3 text-[#a9bcbe] leading-7" style="color: rgb(169, 188, 190); font-weight: 400; font-style: normal; font-size: 16px; line-height: 1.6;">
-                                        From data wrangling and visualization to statewide planning and automation, each chapter has added a new way to solve meaningful problems.
-                                    </p>
-                                </div>
-                                <div class="timeline relative space-y-7">
-                                    <article class="relative pl-10">
-                                        <div class="timeline-dot absolute left-0 top-7"></div>
-                                        <div data-template-id="job-card-1" class="canva-card card-hover rounded-[24px] border border-white/10 bg-[#10282d] overflow-hidden" style="background: rgb(16, 40, 45);">
-                                            <div class="grid lg:grid-cols-[1fr_220px]">
-                                                <div class="p-6 md:p-7">
-                                                    <div class="flex flex-wrap items-center gap-3 mb-3">
-                                                        <span data-template-id="job-1-date" class="canva-tag px-3 py-1 rounded-full text-xs uppercase tracking-[0.14em] bg-[#18383f] text-[#8dd4c5]" style="background: rgb(24, 56, 63); color: rgb(141, 212, 197); font-weight: 700; font-style: normal; font-size: 11px;">Jul 2024 — Present</span><span data-template-id="job-1-location" class="canva-text text-xs uppercase tracking-[0.14em] text-[#7d989d]" style="color: rgb(125, 152, 157); font-weight: 500; font-style: normal; font-size: 11px;">Jefferson City, MO • Hybrid</span>
-                                                    </div>
-                                                    <h3 data-template-id="job-1-title" class="canva-text text-2xl font-bold" style="color: rgb(243, 239, 230); font-weight: 700; font-style: normal; font-size: 24px;">
-                                                        Transportation Planner
-                                                    </h3>
-                                                    <p data-template-id="job-1-company" class="canva-text text-[#d8a761] mt-1" style="color: rgb(216, 167, 97); font-weight: 500; font-style: normal; font-size: 16px;">
-                                                        MoDOT
-                                                    </p>
-                                                    <p data-template-id="job-1-summary" class="canva-text mt-4 text-[#b7c5c7] leading-7" style="color: rgb(183, 197, 199); font-weight: 400; font-style: normal; font-size: 16px; line-height: 1.6;">
-                                                        Leading asset management and performance analytics work across a $14B infrastructure portfolio while shaping clearer, more actionable statewide planning decisions.
-                                                    </p>
-                                                </div>
-                                                <div class="relative min-h-[230px] image-mask">
-                                                    <img data-template-id="job-1-image" loading="lazy" class="canva-image absolute inset-0 w-full h-full object-cover" src="https://images.pexels.com/photos/29617301/pexels-photo-29617301.jpeg" alt="Intricate aerial view of a busy multi-level highway interchange in an urban area."/>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </article>
-                                    <article class="relative pl-10">
-                                        <div class="timeline-dot absolute left-0 top-7"></div>
-                                        <div data-template-id="job-card-2" class="canva-card card-hover rounded-[24px] border border-white/10 bg-[#10282d] overflow-hidden" style="background: rgb(16, 40, 45);">
-                                            <div class="grid lg:grid-cols-[1fr_220px]">
-                                                <div class="p-6 md:p-7">
-                                                    <div class="flex flex-wrap items-center gap-3 mb-3">
-                                                        <span data-template-id="job-2-date" class="canva-tag px-3 py-1 rounded-full text-xs uppercase tracking-[0.14em] bg-[#18383f] text-[#8dd4c5]" style="background: rgb(24, 56, 63); color: rgb(141, 212, 197); font-weight: 700; font-style: normal; font-size: 11px;">Feb 2024 — Present</span><span data-template-id="job-2-location" class="canva-text text-xs uppercase tracking-[0.14em] text-[#7d989d]" style="color: rgb(125, 152, 157); font-weight: 500; font-style: normal; font-size: 11px;">Remote</span>
-                                                    </div>
-                                                    <h3 data-template-id="job-2-title" class="canva-text text-2xl font-bold" style="color: rgb(243, 239, 230); font-weight: 700; font-style: normal; font-size: 24px;">
-                                                        Python Developer
-                                                    </h3>
-                                                    <p data-template-id="job-2-company" class="canva-text text-[#d8a761] mt-1" style="color: rgb(216, 167, 97); font-weight: 500; font-style: normal; font-size: 16px;">
-                                                        Freelance
-                                                    </p>
-                                                    <p data-template-id="job-2-summary" class="canva-text mt-4 text-[#b7c5c7] leading-7" style="color: rgb(183, 197, 199); font-weight: 400; font-style: normal; font-size: 16px; line-height: 1.6;">
-                                                        Designed intelligent scheduling systems and live analytics tools that translate complex logic into practical, user-friendly workflows.
-                                                    </p>
-                                                </div>
-                                                <div class="relative min-h-[230px] image-mask">
-                                                    <img data-template-id="job-2-image" loading="lazy" class="canva-image absolute inset-0 w-full h-full object-cover" src="https://images.pexels.com/photos/10816120/pexels-photo-10816120.jpeg" alt="Detailed view of programming code in a dark theme on a computer screen."/>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </article>
-                                    <div id="timeline-expanded-jobs" class="space-y-7 hidden">
-                                        <article class="relative pl-10">
-                                            <div class="timeline-dot absolute left-0 top-7"></div>
-                                            <div data-template-id="job-card-3" class="canva-card card-hover rounded-[24px] border border-white/10 bg-[#10282d] overflow-hidden" style="background: rgb(16, 40, 45);">
-                                                <div class="grid lg:grid-cols-[1fr_220px]">
-                                                    <div class="p-6 md:p-7">
-                                                        <div class="flex flex-wrap items-center gap-3 mb-3">
-                                                            <span data-template-id="job-3-date" class="canva-tag px-3 py-1 rounded-full text-xs uppercase tracking-[0.14em] bg-[#18383f] text-[#8dd4c5]" style="color: rgb(141, 212, 197); font-weight: 700; font-style: normal; font-size: 11px;">Oct 2022 — aug 2023</span><span data-template-id="job-3-location" class="canva-text text-xs uppercase tracking-[0.14em] text-[#7d989d]" style="color: rgb(125, 152, 157); font-weight: 500; font-style: normal; font-size: 11px;">Remote</span>
-                                                        </div>
-                                                        <h3 data-template-id="job-3-title" class="canva-text text-2xl font-bold" style="color: rgb(243, 239, 230); font-weight: 700; font-style: normal; font-size: 24px;">
-                                                            Data Entry &amp; Mapping Analyst
-                                                        </h3>
-                                                        <p data-template-id="job-3-company" class="canva-text text-[#d8a761] mt-1" style="color: rgb(216, 167, 97); font-weight: 500; font-style: normal; font-size: 16px;">
-                                                            Jensen Partners
-                                                        </p>
-                                                        <p data-template-id="job-3-summary" class="canva-text mt-4 text-[#b7c5c7] leading-7" style="color: rgb(183, 197, 199); font-weight: 400; font-style: normal; font-size: 16px; line-height: 1.6;">
-                                                            Led visualization updates for alt-investment clients, improving data accuracy by 90% through validation protocols and cross-team collaboration.
-                                                        </p>
-                                                    </div>
-                                                    <div class="relative min-h-[230px] image-mask">
-                                                        <img data-template-id="job-3-image" loading="lazy" class="canva-image absolute inset-0 w-full h-full object-cover" src="https://images.pexels.com/photos/3862630/pexels-photo-3862630.jpeg" alt="Laptop screen showing design and data visualization work"/>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </article>
-                                        <article class="relative pl-10">
-                                            <div class="timeline-dot absolute left-0 top-7"></div>
-                                            <div data-template-id="job-card-4" class="canva-card card-hover rounded-[24px] border border-white/10 bg-[#10282d] overflow-hidden" style="background: rgb(16, 40, 45);">
-                                                <div class="grid lg:grid-cols-[1fr_220px]">
-                                                    <div class="p-6 md:p-7">
-                                                        <div class="flex flex-wrap items-center gap-3 mb-3">
-                                                            <span data-template-id="job-4-date" class="canva-tag px-3 py-1 rounded-full text-xs uppercase tracking-[0.14em] bg-[#18383f] text-[#8dd4c5]" style="color: rgb(141, 212, 197); font-weight: 700; font-style: normal; font-size: 11px;">Jun 2022 — Jul 2022</span><span data-template-id="job-4-location" class="canva-text text-xs uppercase tracking-[0.14em] text-[#7d989d]" style="color: rgb(125, 152, 157); font-weight: 500; font-style: normal; font-size: 11px;">Remote</span>
-                                                        </div>
-                                                        <h3 data-template-id="job-4-title" class="canva-text text-2xl font-bold" style="color: rgb(243, 239, 230); font-weight: 700; font-style: normal; font-size: 24px;">
-                                                            Data Analyst Intern
-                                                        </h3>
-                                                        <p data-template-id="job-4-company" class="canva-text text-[#d8a761] mt-1" style="color: rgb(216, 167, 97); font-weight: 500; font-style: normal; font-size: 16px;">
-                                                            AMNESIA MEDIA
-                                                        </p>
-                                                        <p data-template-id="job-4-summary" class="canva-text mt-4 text-[#b7c5c7] leading-7" style="color: rgb(183, 197, 199); font-weight: 400; font-style: normal; font-size: 16px; line-height: 1.6;">
-                                                            Partnered with data scientists to validate AI forecasting models and transformed technical discoveries into executive-ready presentations.
-                                                        </p>
-                                                    </div>
-                                                    <div class="relative min-h-[230px] image-mask">
-                                                        <img data-template-id="job-4-image" loading="lazy" class="canva-image absolute inset-0 w-full h-full object-cover" src="https://images.pexels.com/photos/5632399/pexels-photo-5632399.jpeg" alt="Dashboard and analytics interface showing data insights"/>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </article>
-                                        <article class="relative pl-10">
-                                            <div class="timeline-dot absolute left-0 top-7"></div>
-                                            <div data-template-id="job-card-5" class="canva-card card-hover rounded-[24px] border border-white/10 bg-[#10282d] overflow-hidden" style="background: rgb(16, 40, 45);">
-                                                <div class="grid lg:grid-cols-[1fr_220px]">
-                                                    <div class="p-6 md:p-7">
-                                                        <div class="flex flex-wrap items-center gap-3 mb-3">
-                                                            <span data-template-id="job-5-date" class="canva-tag px-3 py-1 rounded-full text-xs uppercase tracking-[0.14em] bg-[#18383f] text-[#8dd4c5]" style="color: rgb(141, 212, 197); font-weight: 700; font-style: normal; font-size: 11px;">mar 2020 - jun 2020</span><span data-template-id="job-5-location" class="canva-text text-xs uppercase tracking-[0.14em] text-[#7d989d]" style="color: rgb(125, 152, 157); font-weight: 500; font-style: normal; font-size: 11px;">seoul, south korea</span>
-                                                        </div>
-                                                        <h3 data-template-id="job-5-title" class="canva-text text-2xl font-bold" style="color: rgb(243, 239, 230); font-weight: 700; font-style: normal; font-size: 24px;">
-                                                            Design &amp; Research Developer
-                                                        </h3>
-                                                        <p data-template-id="job-5-company" class="canva-text text-[#d8a761] mt-1" style="color: rgb(216, 167, 97); font-weight: 500; font-style: normal; font-size: 16px;">
-                                                            DYB - CREO
-                                                        </p>
-                                                        <p data-template-id="job-5-summary" class="canva-text mt-4 text-[#b7c5c7] leading-7" style="color: rgb(183, 197, 199); font-weight: 400; font-style: normal; font-size: 16px; line-height: 1.6;">
-                                                            Co-authored K–5 English coursebooks and conducted curriculum research that improved student comprehension across Seoul classrooms.
-                                                        </p>
-                                                    </div>
-                                                    <div class="relative min-h-[230px] image-mask">
-                                                        <img data-template-id="job-5-image" loading="lazy" class="canva-image absolute inset-0 w-full h-full object-cover" src="https://images.pexels.com/photos/6248959/pexels-photo-6248959.jpeg" alt="Business person evaluating financial charts on a laptop in a modern office setting."/>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </article>
-                                    </div>
-                                    <div class="relative pl-10 flex justify-center">
-                                        <button id="timeline-expand-button" type="button" class="inline-flex items-center gap-2 rounded-full border border-white/15 px-4 py-3 text-sm uppercase tracking-[0.18em] text-[#8dd4c5] hover:border-[#8dd4c5]/60 hover:text-white transition"> <span data-template-id="timeline-expand-label" style="color: rgb(141, 212, 197); font-weight: 400; font-style: normal; font-size: 14px;">More Experience</span> </button>
-                                    </div>
-                                </div>
-                            </section>
-                            <!-------------------EDUCATION SECTION--------------------->
-                            <section id="education" class="pt-24 reveal">
-                                <div class="mb-8">
-                                    <p data-template-id="education-eyebrow" class="canva-text uppercase tracking-[0.28em] text-xs text-[#8dd4c5] mb-3" style="color: rgb(141, 212, 197); font-weight: 700; font-style: normal; font-size: 12px; letter-spacing: 0.18rem;">
-                                        Foundation
-                                    </p>
-                                    <h2 data-template-id="education-title" class="canva-text display text-[2.5rem] md:text-[3.5rem] leading-tight" style="color: rgb(243, 239, 230); font-weight: 700; font-style: normal; font-size: 24px;">
-                                        Learning in classrooms, code, and culture.
-                                    </h2>
-                                </div>
-                                <div class="grid lg:grid-cols-3 gap-4">
-                                    <article data-template-id="education-card-1" class="canva-card rounded-2xl border border-white/10 bg-[#10282d] p-5" style="background: rgb(16, 40, 45);">
-                                        <p data-template-id="education-1-date" class="canva-text text-xs uppercase tracking-[0.16em] text-[#8dd4c5]" style="color: rgb(141, 212, 197); font-weight: 700; font-style: normal; font-size: 11px;">
-                                            Completed Jun 2022
-                                        </p>
-                                        <h3 data-template-id="education-1-title" class="canva-text mt-3 font-bold text-lg" style="color: rgb(243, 239, 230); font-weight: 700; font-style: normal; font-size: 18px;">
-                                            Data Analytics Boot Camp
-                                        </h3>
-                                        <p data-template-id="education-1-school" class="canva-text text-[#d8a761] mt-2 text-sm" style="color: rgb(216, 167, 97); font-weight: 400; font-style: normal; font-size: 14px;">
-                                            iXperience • Remote
-                                        </p>
-                                        <p data-template-id="education-1-copy" class="canva-text mt-4 text-sm leading-6 text-[#b7c5c7]" style="color: rgb(183, 197, 199); font-weight: 400; font-style: normal; font-size: 14px; line-height: 1.5;">
-                                            Focused on wrangling, hypothesis testing, dashboarding, Python, SQL, ML, Tableau, Plotly, and Seaborn.
-                                        </p>
-                                    </article>
-                                    <article data-template-id="education-card-2" class="canva-card rounded-2xl border border-white/10 bg-[#10282d] p-5" style="background: rgb(16, 40, 45);">
-                                        <p data-template-id="education-2-date" class="canva-text text-xs uppercase tracking-[0.16em] text-[#8dd4c5]" style="color: rgb(141, 212, 197); font-weight: 700; font-style: normal; font-size: 11px;">
-                                            Graduated May 2022
-                                        </p>
-                                        <h3 data-template-id="education-2-title" class="canva-text mt-3 font-bold text-lg" style="color: rgb(243, 239, 230); font-weight: 700; font-style: normal; font-size: 18px;">
-                                            B.A. Mathematical Sciences
-                                        </h3>
-                                        <p data-template-id="education-2-school" class="canva-text text-[#d8a761] mt-2 text-sm" style="color: rgb(216, 167, 97); font-weight: 400; font-style: normal; font-size: 14px;">
-                                            Westminster College • Fulton, MO
-                                        </p>
-                                        <p data-template-id="education-2-copy" class="canva-text mt-4 text-sm leading-6 text-[#b7c5c7]" style="color: rgb(183, 197, 199); font-weight: 400; font-style: normal; font-size: 14px; line-height: 1.5;">
-                                            Minor in Pre-Engineering with a strong analytical foundation in mathematics and problem solving.
-                                        </p>
-                                    </article>
-                                    <article data-template-id="education-card-3" class="canva-card rounded-2xl border border-white/10 bg-[#10282d] p-5" style="background: rgb(16, 40, 45);">
-                                        <p data-template-id="education-3-date" class="canva-text text-xs uppercase tracking-[0.16em] text-[#8dd4c5]" style="color: rgb(141, 212, 197); font-weight: 700; font-style: normal; font-size: 11px;">
-                                            Graduated May 2019
-                                        </p>
-                                        <h3 data-template-id="education-3-title" class="canva-text mt-3 font-bold text-lg" style="color: rgb(243, 239, 230); font-weight: 700; font-style: normal; font-size: 18px;">
-                                            A.S. Engineering, Honors
-                                        </h3>
-                                        <p data-template-id="education-3-school" class="canva-text text-[#d8a761] mt-2 text-sm" style="color: rgb(216, 167, 97); font-weight: 400; font-style: normal; font-size: 14px;">
-                                            State Fair Community College
-                                        </p>
-                                        <p data-template-id="education-3-copy" class="canva-text mt-4 text-sm leading-6 text-[#b7c5c7]" style="color: rgb(183, 197, 199); font-weight: 400; font-style: normal; font-size: 14px; line-height: 1.5;">
-                                            Built early technical confidence through engineering coursework and disciplined quantitative study.
-                                        </p>
-                                    </article>
-                                </div>
-                            </section>
-                            <!----------------CERTIFICATION SECTION-------------------->
-                            <section id="certificates" class="pt-24 pb-20 reveal">
-                                <div class="mb-8">
-                                    <p data-template-id="certificates-eyebrow" class="canva-text uppercase tracking-[0.28em] text-xs text-[#8dd4c5] mb-3" style="color: rgb(141, 212, 197); font-weight: 700; font-style: normal; font-size: 12px; letter-spacing: 0.18rem;">
-                                        Continued Growth
-                                    </p>
-                                    <h2 data-template-id="certificates-title" class="canva-text display text-[2.5rem] md:text-[3.5rem] leading-tight" style="color: rgb(243, 239, 230); font-weight: 700; font-style: normal; font-size: 24px;">
-                                        Credentials along the way.
-                                    </h2>
-                                </div>
-                                <div data-template-id="certificates-panel" class="canva-panel rounded-[24px] border border-white/10 bg-[#10282d] p-6 md:p-7" style="background: rgb(16, 40, 45);">
-                                    <div class="grid md:grid-cols-2 gap-x-8 gap-y-4 text-[#d8e1e1]">
-                                        <p data-template-id="certificate-1" class="canva-text" style="color: rgb(216, 225, 225); font-weight: 400; font-style: normal; font-size: 15px;">
-                                            Learning HubSpot CRM — LinkedIn
-                                        </p>
-                                        <p data-template-id="certificate-2" class="canva-text" style="color: rgb(216, 225, 225); font-weight: 400; font-style: normal; font-size: 15px;">
-                                            Excel PivotTables: Mastering PivotTables and Pivot Charts — LinkedIn
-                                        </p>
-                                        <p data-template-id="certificate-3" class="canva-text" style="color: rgb(216, 225, 225); font-weight: 400; font-style: normal; font-size: 15px;">
-                                            Transportation Planning Process — National Transit Institute
-                                        </p>
-                                        <p data-template-id="certificate-4" class="canva-text" style="color: rgb(216, 225, 225); font-weight: 400; font-style: normal; font-size: 15px;">
-                                            Learning Power BI Desktop — LinkedIn
-                                        </p>
-                                    </div>
-                                </div>
-                            </section>
-                        </div>
-                    </section>
-                </div>
-                <!------------------NEW PAGE----------------------->
-                <!------------------FEATURE WORK DASHBOARDS------------------>
-                <div id="work-view" class="view-hidden">
-                    <section class="max-w-[1400px] mx-auto px-6 lg:px-10 pt-16 lg:pt-24 pb-20">
-                        <div class="reveal visible max-w-4xl">
-                            <p data-template-id="work-eyebrow" class="canva-text uppercase tracking-[0.28em] text-xs text-[#8dd4c5] mb-5" style="color: rgb(141, 212, 197); font-weight: 700; font-style: normal; font-size: 12px; letter-spacing: 0.18rem;">
-                                Featured Work
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Karina Gessel-Esquivel | Data Analytics &amp; Transportation Planning
+    </title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+
+    <!-- Lucide Icons -->
+    <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body
+    data-template-id="__page-root"
+    class="w-full min-h-screen grain"
+    style="background: linear-gradient(rgb(7, 20, 23), rgb(9, 25, 29));"
+>
+
+    <div class="w-full">
+
+        <!-- HEADER -->
+        <header
+            class="sticky top-0 z-50 w-full border-b border-white/10 bg-gradient-to-b from-[#0c1f23] to-[#09191d] backdrop-blur-md"
+        >
+            <div
+                class="max-w-[1400px] mx-auto px-6 lg:px-10 py-5 flex items-center justify-between gap-6"
+            >
+
+                <!-- Brand -->
+                <a
+                    href="#overview"
+                    class="flex items-center gap-3"
+                    aria-label="Return to overview"
+                >
+                    <div class="w-2.5 h-2.5 rounded-full bg-[#8dd4c5]"></div>
+
+                    <p
+                        id="brand-name"
+                        data-template-id="brand-name"
+                        class="canva-text uppercase tracking-[0.28em] text-xs text-[#b7c5c7]"
+                    >
+                        Karina Esquivel
+                    </p>
+                </a>
+
+                <!-- Desktop Navigation -->
+                <nav
+                    id="resume-nav"
+                    class="hidden md:flex items-center gap-7 text-xs uppercase tracking-[0.18em] text-[#b7c5c7]"
+                    aria-label="Main navigation"
+                >
+                    <a
+                        href="#expertise"
+                        data-template-id="top-nav-expertise"
+                        class="canva-link nav-link-top hover:text-white transition"
+                    >
+                        Expertise
+                    </a>
+
+                    <a
+                        href="#journey"
+                        data-template-id="top-nav-journey"
+                        class="canva-link nav-link-top hover:text-white transition"
+                    >
+                        Journey
+                    </a>
+
+                    <a
+                        href="#education"
+                        data-template-id="top-nav-education"
+                        class="canva-link nav-link-top hover:text-white transition"
+                    >
+                        Education
+                    </a>
+
+                    <a
+                        href="#certificates"
+                        data-template-id="top-nav-certificates"
+                        class="canva-link nav-link-top hover:text-white transition"
+                    >
+                        Certificates
+                    </a>
+
+                    <a
+                        href="portfolio.html"
+                        class="canva-link nav-link-top hover:text-white transition"
+                    >
+                        Portfolio
+                    </a>
+                </nav>
+
+            </div>
+        </header>
+
+        <main class="w-full">
+
+            <!-- MAIN RESUME / LANDING PAGE -->
+            <div>
+
+                <!-- OVERVIEW AND SIDE NAVIGATION -->
+                <section
+                    id="overview"
+                    class="max-w-[1400px] mx-auto px-6 lg:px-10 pt-10 lg:pt-16 pb-16 lg:pb-24 grid lg:grid-cols-[220px_1fr] gap-10"
+                >
+
+                    <!-- Side Navigation -->
+                    <aside class="desktop-rail">
+
+                        <div class="fixed top-32 w-[220px] pt-2">
+
+                            <p
+                                data-template-id="rail-label"
+                                class="canva-text text-[11px] uppercase tracking-[0.28em] text-[#6f8d92] mb-8"
+                            >
+                                Navigate
                             </p>
-                            <h1 data-template-id="work-title" class="canva-text display text-[3.2rem] sm:text-[5rem] lg:text-[6rem] leading-[0.98] max-w-5xl" style="color: rgb(243, 239, 230); font-weight: 700; font-style: normal; font-size: 32px;">
-                                Selected projects with a point of view.
-                            </h1>
-                            <p data-template-id="work-copy" class="canva-text mt-6 text-lg md:text-xl text-[#b7c5c7] max-w-3xl leading-8" style="color: rgb(183, 197, 199); font-weight: 400; font-style: normal; font-size: 20px; line-height: 1.6;">
-                                A focused look at dashboards, systems, and analytical storytelling built to make information easier to see, understand, and act on.
-                            </p>
+
+                            <nav
+                                class="space-y-5 text-sm text-[#9db1b4]"
+                                aria-label="Page sections"
+                            >
+                                <a
+                                    href="#overview"
+                                    class="nav-link active block transition"
+                                    data-section="overview"
+                                >
+                                    Overview
+                                </a>
+
+                                <a
+                                    href="#expertise"
+                                    class="nav-link block transition"
+                                    data-section="expertise"
+                                >
+                                    Expertise
+                                </a>
+
+                                <a
+                                    href="#journey"
+                                    class="nav-link block transition"
+                                    data-section="journey"
+                                >
+                                    Journey
+                                </a>
+
+                                <a
+                                    href="#education"
+                                    class="nav-link block transition"
+                                    data-section="education"
+                                >
+                                    Education
+                                </a>
+
+                                <a
+                                    href="#certificates"
+                                    class="nav-link block transition"
+                                    data-section="certificates"
+                                >
+                                    Certificates
+                                </a>
+                            </nav>
+
                         </div>
-                        <div class="mt-14 grid lg:grid-cols-3 gap-5">
-                            <a href="bridge-condition.html"
-                                data-template-id="work-card-1"
-                                class="canva-card work-card block rounded-[26px] overflow-hidden border border-white/10 bg-[#10282d] text-left cursor-pointer transition-all duration-300"
-                                style="background: rgb(16, 40, 45);">
-                            <div class="relative h-[260px] image-mask">
-                                <img data-template-id="work-card-1-image" loading="lazy" class="canva-image absolute inset-0 w-full h-full object-cover" src="https://images.pexels.com/photos/97080/pexels-photo-97080.jpeg" alt="Abstract visualization of data analytics with graphs and charts showing dynamic growth."/>
-                            </div>
-                            <div class="p-6">
-                                <p data-template-id="work-card-1-tag" class="canva-text text-xs uppercase tracking-[0.18em] text-[#8dd4c5]" style="color: rgb(141, 212, 197); font-weight: 700; font-style: normal; font-size: 11px;">
-                                    Dashboard Strategy
+
+                    </aside>
+
+                    <!-- MAIN CONTENT COLUMN -->
+                    <div>
+
+                        <!-- HERO / OVERVIEW -->
+                        <section
+                            class="grid xl:grid-cols-[1.08fr_.92fr] gap-8 lg:gap-10 items-stretch"
+                        >
+
+                            <div class="reveal">
+
+                                <p
+                                    data-template-id="hero-eyebrow"
+                                    class="canva-text eyebrow mb-5"
+                                >
+                                    Power BI • Python • SQL • ArcGIS
                                 </p>
-                                <h2 data-template-id="work-card-1-title" class="canva-text display mt-4 text-3xl leading-tight" style="color: rgb(243, 239, 230); font-weight: 700; font-style: normal; font-size: 28px;">
-                                    Statewide Bridge Condition
-                                </h2>
-                                <p data-template-id="work-card-1-copy" class="canva-text mt-4 text-[#b7c5c7] leading-7" style="color: rgb(183, 197, 199); font-weight: 400; font-style: normal; font-size: 16px; line-height: 1.6;">
-                                    A decision-ready reporting environment designed to surface trends, connect assets to outcomes, and help leadership move from reaction to foresight.
-                                </p>
-                                <p data-template-id="work-card-1-meta" class="canva-text mt-6 text-xs uppercase tracking-[0.16em] text-[#7d989d]" style="color: rgb(125, 152, 157); font-weight: 500; font-style: normal; font-size: 11px;">
-                                    Power BI • SQL• Arcgis
-                                </p>
-                            </div>
-                        </a> 
-                        <a href="amp-dashboard.html"
-                            data-template-id="work-card-2"
-                            class="canva-card work-card block rounded-[26px] overflow-hidden border border-white/10 bg-[#10282d] text-left cursor-pointer transition-all duration-300"
-                            style="background: rgb(16, 40, 45);">
-                            <div class="relative h-[260px] image-mask">
-                                <img data-template-id="work-card-2-image" loading="lazy" class="canva-image absolute inset-0 w-full h-full object-cover" src="https://images.pexels.com/photos/4955393/pexels-photo-4955393.jpeg" alt="Vivid close-up of code on a computer screen showcasing programming details."/>
-                            </div>
-                            <div class="p-6">
-                                <p data-template-id="work-card-2-tag" class="canva-text text-xs uppercase tracking-[0.18em] text-[#d8a761]" style="color: rgb(216, 167, 97); font-weight: 700; font-style: normal; font-size: 11px;">
-                                    From Numbers to Narrative
-                                </p>
-                                <h2 data-template-id="work-card-2-title" class="canva-text display mt-4 text-3xl leading-tight" style="color: rgb(243, 239, 230); font-weight: 700; font-style: normal; font-size: 28px;">
-                                    Asset Management Planning
-                                </h2>
-                                <p data-template-id="work-card-2-copy" class="canva-text mt-4 text-[#b7c5c7] leading-7" style="color: rgb(183, 197, 199); font-weight: 400; font-style: normal; font-size: 16px; line-height: 1.6;">
-                                    A Python-powered workflow that turns complex matching rules and fairness constraints into a simple, repeatable scheduling experience.
-                                </p>
-                                <p data-template-id="work-card-2-meta" class="canva-text mt-6 text-xs uppercase tracking-[0.16em] text-[#7d989d]" style="color: rgb(125, 152, 157); font-weight: 500; font-style: normal; font-size: 11px;">
-                                    Power bi • Oracle • SQL
-                                </p>
-                            </div>
-                        </a> 
-                        <a href="tp-d-tracker.html"
-                            data-template-id="work-card-3"
-                            class="canva-card work-card block rounded-[26px] overflow-hidden border border-white/10 bg-[#10282d] text-left cursor-pointer transition-all duration-300"
-                            style="background: rgb(16, 40, 45);">
-                            <div class="relative h-[260px] image-mask">
-                                <img data-template-id="work-card-3-image" loading="lazy" class="canva-image absolute inset-0 w-full h-full object-cover" src="https://images.pexels.com/photos/7947705/pexels-photo-7947705.jpeg" alt="Overhead view of financial analysis charts with magnifying glass on colorful background, ideal for business concepts."/>
-                            </div>
-                            <div class="p-6">
-                                <p data-template-id="work-card-3-tag" class="canva-text text-xs uppercase tracking-[0.18em] text-[#8dd4c5]" style="color: rgb(141, 212, 197); font-weight: 700; font-style: normal; font-size: 11px;">
-                                    Visual Storytelling
-                                </p>
-                                <h2 data-template-id="work-card-3-title" class="canva-text display mt-4 text-3xl leading-tight" style="color: rgb(243, 239, 230); font-weight: 700; font-style: normal; font-size: 28px;">
-                                    Performance Tracker
-                                </h2>
-                                <p data-template-id="work-card-3-copy" class="canva-text mt-4 text-[#b7c5c7] leading-7" style="color: rgb(183, 197, 199); font-weight: 400; font-style: normal; font-size: 16px; line-height: 1.6;">
-                                    A reporting concept that reframes dense analysis into a clearer visual language for stakeholders, presentations, and next-step decisions.
-                                </p>
-                                <p data-template-id="work-card-3-meta" class="canva-text mt-6 text-xs uppercase tracking-[0.16em] text-[#7d989d]" style="color: rgb(125, 152, 157); font-weight: 500; font-style: normal; font-size: 11px;">
-                                    Power bi • Everviz • Drupal
-                                </p>
-                            </div>
-                        </a> 
-                        <a href="ecnl-scheduling-engine.html"
-                            data-template-id="work-card-4"
-                            class="canva-card work-card block rounded-[26px] overflow-hidden border border-white/10 bg-[#10282d] text-left cursor-pointer transition-all duration-300"
-                            style="background: rgb(16, 40, 45);">
-                            <div class="relative h-[260px] image-mask">
-                                <img data-template-id="work-card-4-image" loading="lazy" class="canva-image absolute inset-0 w-full h-full object-cover" src="https://images.pexels.com/photos/47343/the-ball-stadion-horn-corner-47343.jpeg" alt="A vibrant green soccer field corner with a yellow flag and soccer ball, perfect for sports themes."/>
-                            </div>
-                            <div class="p-6">
-                                <p data-template-id="work-card-4-tag" class="canva-text text-xs uppercase tracking-[0.18em] text-[#d8a761]" style="color: rgb(216, 167, 97); font-weight: 700; font-style: normal; font-size: 11px;">
-                                    Scheduling Engine
-                                </p>
-                                <h2 data-template-id="work-card-4-title" class="canva-text display mt-4 text-3xl leading-tight" style="color: rgb(243, 239, 230); font-weight: 700; font-style: normal; font-size: 28px;">
-                                    ECNL Scheduler
-                                </h2>
-                                <p data-template-id="work-card-4-copy" class="canva-text mt-4 text-[#b7c5c7] leading-7" style="color: rgb(183, 197, 199); font-weight: 400; font-style: normal; font-size: 16px; line-height: 1.6;">
-                                    Automated soccer tournament scheduling system that handles complex matching rules and fairness constraints.
-                                </p>
-                                <p data-template-id="work-card-4-meta" class="canva-text mt-6 text-xs uppercase tracking-[0.16em] text-[#7d989d]" style="color: rgb(125, 152, 157); font-weight: 500; font-style: normal; font-size: 11px;">
-                                    Python • Automation • google apps script
-                                </p>
-                            </div>
-                        </a> 
-                        <a href="dre-phlebotomy-dashboards.html"
-                            data-template-id="work-card-5"
-                            class="canva-card work-card block rounded-[26px] overflow-hidden border border-white/10 bg-[#10282d] text-left cursor-pointer transition-all duration-300"
-                            style="background: rgb(16, 40, 45);">
-                            <div class="relative h-[260px] image-mask">
-                                <img data-template-id="work-card-5-image" loading="lazy" class="canva-image absolute inset-0 w-full h-full object-cover" src="https://images.pexels.com/photos/4048104/pexels-photo-4048104.jpeg" alt="Vector image of digital map representing Africa and Europe continents with wavy lines and bright round marks on device screen"/>
-                            </div>
-                            <div class="p-6">
-                                <p data-template-id="work-card-5-tag" class="canva-text text-xs uppercase tracking-[0.18em] text-[#8dd4c5]" style="color: rgb(141, 212, 197); font-weight: 700; font-style: normal; font-size: 11px;">
-                                    Spatial Analytics
-                                </p>
-                                <h2 data-template-id="work-card-5-title" class="canva-text display mt-4 text-3xl leading-tight" style="color: rgb(243, 239, 230); font-weight: 700; font-style: normal; font-size: 28px;">
-                                    ArcGIS + Power BI Integration
-                                </h2>
-                                <p data-template-id="work-card-5-copy" class="canva-text mt-4 text-[#b7c5c7] leading-7" style="color: rgb(183, 197, 199); font-weight: 400; font-style: normal; font-size: 16px; line-height: 1.6;">
-                                    Integrated geospatial analytics combining Power BI dashboards with ArcGIS Online spatial visualization.
-                                </p>
-                                <p data-template-id="work-card-5-meta" class="canva-text mt-6 text-xs uppercase tracking-[0.16em] text-[#7d989d]" style="color: rgb(125, 152, 157); font-weight: 500; font-style: normal; font-size: 11px;">
-                                    Power BI • ArcGIS Online • Spatial Analytics
-                                </p>
-                            </div>
-                        </a>
-                        </div>
-                        <div data-template-id="work-cta-panel" class="canva-panel mt-8 rounded-[26px] border border-white/10 bg-[#10282d] p-6 md:p-8 flex flex-col md:flex-row md:items-center md:justify-between gap-5" style="background: rgb(16, 40, 45);">
-                            <div>
-                                <p data-template-id="work-cta-title" class="canva-text display text-3xl" style="color: rgb(243, 239, 230); font-weight: 700; font-style: normal; font-size: 28px;">
-                                    Want more of the story?
-                                </p>
-                                <p data-template-id="work-cta-copy" class="canva-text mt-2 text-[#b7c5c7]" style="color: rgb(183, 197, 199); font-weight: 400; font-style: normal; font-size: 16px;">
-                                    Return Home to view the experience, education, and path behind the work.
-                                </p>
-                            </div>
-                            <button id="work-cta-button" data-template-id="work-cta-button" class="canva-button inline-flex items-center gap-2 rounded-full border border-white/15 px-5 py-3 text-sm text-[#d7e4e4] hover:border-[#8dd4c5]/60 transition" type="button" style="color: rgb(215, 228, 228); font-weight: 400; font-style: normal; font-size: 14px;"> Return Home </button>
-                        </div>
-                    </section>
-                </div>
-                <div id="case-study-view" class="view-hidden">
-                    <section class="max-w-[1400px] mx-auto px-6 lg:px-10 pt-16 lg:pt-24 pb-20">
-                        <div class="mb-12">
-                            <button id="case-study-back-button" type="button" class="inline-flex items-center gap-2 text-sm uppercase tracking-[0.18em] text-[#8dd4c5] hover:text-[#b7c5c7] transition mb-8"> <i data-lucide="arrow-left" class="w-4 h-4"></i> <span>Back to Work</span> </button>
-                            <div class="reveal visible max-w-4xl">
-                                <p data-template-id="case-study-eyebrow" class="canva-text uppercase tracking-[0.28em] text-xs text-[#8dd4c5] mb-5" style="color: rgb(141, 212, 197); font-weight: 700; font-style: normal; font-size: 12px; letter-spacing: 0.18rem;">
-                                    Case Study
-                                </p>
-                                <h1 data-template-id="case-study-title" class="canva-text display text-[3.2rem] sm:text-[5rem] lg:text-[6rem] leading-[0.98] max-w-5xl" style="color: rgb(243, 239, 230); font-weight: 700; font-style: normal; font-size: 32px;">
-                                    Bridge Condition Statewide
+
+                                <h1
+                                    data-template-id="hero-title"
+                                    class="canva-text hero-title"
+                                >
+                                    Turning complex data into clear direction.
                                 </h1>
-                                <p data-template-id="case-study-intro" class="canva-text mt-6 text-lg md:text-xl text-[#b7c5c7] max-w-3xl leading-8" style="color: rgb(183, 197, 199); font-weight: 400; font-style: normal; font-size: 20px; line-height: 1.6;">
-                                    Add your introduction and project overview here. Explain the challenge, context, and what you built.
+
+                                <p
+                                    data-template-id="hero-subtitle"
+                                    class="canva-text body-copy mt-6 text-lg md:text-xl max-w-2xl"
+                                >
+                                    I design dashboards, automate workflows, and
+                                    build analytics solutions that help
+                                    organizations make smarter decisions.
                                 </p>
+
+                                <div class="mt-8 flex flex-wrap gap-3">
+
+    <!-- View My Work -->
+    <a
+        href="portfolio.html"
+        class="canva-link btn-outline text-sm bg-white/[0.03]"
+    >
+        <i
+            data-lucide="briefcase"
+            class="w-4 h-4"
+        ></i>
+
+        <span>View My Work</span>
+    </a>
+
+    <!-- Resume -->
+    <a
+        href="resume.html"
+        class="canva-link btn-outline text-sm bg-white/[0.03]"
+    >
+        <i
+            data-lucide="file-text"
+            class="w-4 h-4"
+        ></i>
+
+        <span>Resume</span>
+    </a>
+
+    <!-- LinkedIn -->
+    <a
+        href="https://www.linkedin.com/in/karina-gessel-esquivel/"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="canva-link btn-outline text-sm bg-white/[0.03]"
+    >
+        <i
+            data-lucide="linkedin"
+            class="w-4 h-4"
+        ></i>
+
+        <span>LinkedIn + Connect</span>
+    </a>
+
+</div>
+
                             </div>
-                        </div>
-                        <div id="case-study-content" class="space-y-12">
-                            <div class="grid md:grid-cols-2 gap-8 items-start">
-                                <div>
-                                    <h2 data-template-id="case-study-section-1-title" class="canva-text display text-2xl mb-4" style="color: rgb(243, 239, 230); font-weight: 700; font-style: normal; font-size: 24px;">
-                                        The Challenge
-                                    </h2>
-                                    <p data-template-id="case-study-section-1-content" class="canva-text text-[#b7c5c7] leading-7" style="color: rgb(183, 197, 199); font-weight: 400; font-style: normal; font-size: 16px; line-height: 1.6;">
-                                        Describe the problem you were solving and the context behind the project.
-                                    </p>
+
+                            <!-- KPI IMAGE SECTION -->
+                            <div
+                                class="reveal relative min-h-[420px] overflow-hidden rounded-[28px] border border-white/10 image-mask"
+                            >
+
+                                <img
+                                    data-template-id="hero-image"
+                                    loading="lazy"
+                                    class="canva-image absolute inset-0 w-full h-full object-cover"
+                                    src="https://images.pexels.com/photos/10325707/pexels-photo-10325707.png"
+                                    alt="Abstract orange technology network on a dark background"
+                                >
+
+                                <div class="absolute left-6 right-6 bottom-6 z-10">
+
+                                    <div class="grid grid-cols-2 gap-3">
+
+                                        <div
+                                            data-template-id="metric-card-1"
+                                            class="canva-card bg-[#0a1a1d]/80 backdrop-blur-sm rounded-2xl p-4 border border-white/10"
+                                        >
+                                            <p
+                                                data-template-id="metric-value-1"
+                                                class="canva-text metric-value text-[#8dd4c5]"
+                                            >
+                                                $14B
+                                            </p>
+
+                                            <p
+                                                data-template-id="metric-label-1"
+                                                class="canva-text mt-1 text-[11px] uppercase tracking-[0.16em] text-[#b7c5c7]"
+                                            >
+                                                Transportation Portfolio Supported
+                                            </p>
+                                        </div>
+
+                                        <div
+                                            data-template-id="metric-card-2"
+                                            class="canva-card bg-[#0a1a1d]/80 backdrop-blur-sm rounded-2xl p-4 border border-white/10"
+                                        >
+                                            <p
+                                                data-template-id="metric-value-2"
+                                                class="canva-text metric-value text-[#d8a761]"
+                                            >
+                                                Founder
+                                            </p>
+
+                                            <p
+                                                data-template-id="metric-label-2"
+                                                class="canva-text mt-1 text-[11px] uppercase tracking-[0.16em] text-[#b7c5c7]"
+                                            >
+                                                Transportation Planning Analytics Group
+                                            </p>
+                                        </div>
+
+                                        <div
+                                            data-template-id="metric-card-3"
+                                            class="canva-card bg-[#0a1a1d]/80 backdrop-blur-sm rounded-2xl p-4 border border-white/10"
+                                        >
+                                            <p
+                                                data-template-id="metric-value-3"
+                                                class="canva-text metric-value text-[#8dd4c5]"
+                                            >
+                                                1x
+                                            </p>
+
+                                            <p
+                                                data-template-id="metric-label-3"
+                                                class="canva-text mt-1 text-[11px] uppercase tracking-[0.16em] text-[#b7c5c7]"
+                                            >
+                                                Director's Service Award
+                                            </p>
+                                        </div>
+
+                                        <div
+                                            data-template-id="metric-card-4"
+                                            class="canva-card bg-[#0a1a1d]/80 backdrop-blur-sm rounded-2xl p-4 border border-white/10"
+                                        >
+                                            <p
+                                                data-template-id="metric-value-4"
+                                                class="canva-text metric-value text-[#d8a761]"
+                                            >
+                                                2x
+                                            </p>
+
+                                            <p
+                                                data-template-id="metric-label-4"
+                                                class="canva-text mt-1 text-[11px] uppercase tracking-[0.16em] text-[#b7c5c7]"
+                                            >
+                                                Innovations Challenge Finalist
+                                            </p>
+                                        </div>
+
+                                    </div>
+
                                 </div>
-                                <div class="relative min-h-[300px] rounded-2xl overflow-hidden border border-white/10 image-mask">
-                                    <img data-template-id="case-study-image-1" loading="lazy" class="canva-image absolute inset-0 w-full h-full object-cover" src="https://images.pexels.com/photos/3862630/pexels-photo-3862630.jpeg" alt="Laptop screen showing design and data visualization work"/>
-                                </div>
+
                             </div>
-                            <div class="grid md:grid-cols-2 gap-8 items-start">
-                                <div class="relative min-h-[300px] rounded-2xl overflow-hidden border border-white/10 image-mask order-2 md:order-1">
-                                    <img data-template-id="case-study-image-2" loading="lazy" class="canva-image absolute inset-0 w-full h-full object-cover" src="https://images.pexels.com/photos/5632399/pexels-photo-5632399.jpeg" alt="Dashboard and analytics interface showing data insights"/>
-                                </div>
-                                <div class="order-1 md:order-2">
-                                    <h2 data-template-id="case-study-section-2-title" class="canva-text display text-2xl mb-4" style="color: rgb(243, 239, 230); font-weight: 700; font-style: normal; font-size: 24px;">
-                                        The Solution
-                                    </h2>
-                                    <p data-template-id="case-study-section-2-content" class="canva-text text-[#b7c5c7] leading-7" style="color: rgb(183, 197, 199); font-weight: 400; font-style: normal; font-size: 16px; line-height: 1.6;">
-                                        Walk through your approach, design decisions, and implementation. Show how you solved the problem.
-                                    </p>
-                                </div>
-                            </div>
-                            <div>
-                                <h2 data-template-id="case-study-section-3-title" class="canva-text display text-2xl mb-4" style="color: rgb(243, 239, 230); font-weight: 700; font-style: normal; font-size: 24px;">
-                                    Impact &amp; Outcomes
+
+                        </section>
+
+                        <!-- EXPERTISE -->
+                        <section
+                            id="expertise"
+                            class="pt-24 reveal"
+                        >
+
+                            <div class="mb-10">
+
+                                <p
+                                    data-template-id="expertise-eyebrow"
+                                    class="canva-text eyebrow mb-3"
+                                >
+                                    Capabilities
+                                </p>
+
+                                <h2
+                                    data-template-id="expertise-title"
+                                    class="canva-text section-title"
+                                >
+                                    Where analysis becomes action.
                                 </h2>
-                                <p data-template-id="case-study-section-3-content" class="canva-text text-[#b7c5c7] leading-7 max-w-3xl" style="color: rgb(183, 197, 199); font-weight: 400; font-style: normal; font-size: 16px; line-height: 1.6;">
-                                    Share the results and business impact of your work. Include metrics, feedback, or lessons learned.
+
+                                <p
+                                    data-template-id="expertise-copy"
+                                    class="canva-text body-copy max-w-2xl mt-3"
+                                >
+                                    A toolkit shaped by analytics, systems
+                                    thinking, and communication—built to make
+                                    complexity useful.
                                 </p>
+
                             </div>
-                        </div>
-                        <div class="mt-16 rounded-[26px] border border-white/10 bg-[#10282d] p-6 md:p-8">
-                            <h2 data-template-id="case-study-meta-title" class="canva-text display text-2xl mb-6" style="color: rgb(243, 239, 230); font-weight: 700; font-style: normal; font-size: 24px;">
-                                Project Details
-                            </h2>
-                            <div class="grid md:grid-cols-3 gap-8">
-                                <div>
-                                    <p data-template-id="case-study-meta-tools-label" class="canva-text text-xs uppercase tracking-[0.18em] text-[#8dd4c5] mb-2" style="color: rgb(141, 212, 197); font-weight: 700; font-style: normal; font-size: 12px; letter-spacing: 0.18rem;">
-                                        Tools &amp; Technologies
+
+                            <div class="grid md:grid-cols-2 xl:grid-cols-4 gap-4">
+
+                                <article
+                                    data-template-id="expertise-card-1"
+                                    class="canva-card card-hover rounded-2xl border border-white/10 bg-[#10282d] p-5"
+                                >
+                                    <i
+                                        data-lucide="bar-chart-3"
+                                        class="w-5 h-5 text-[#8dd4c5]"
+                                    ></i>
+
+                                    <h3
+                                        data-template-id="expertise-card-1-title"
+                                        class="canva-text mt-4 font-bold text-lg text-[#f3efe6]"
+                                    >
+                                        Insight Systems
+                                    </h3>
+
+                                    <p
+                                        data-template-id="expertise-card-1-copy"
+                                        class="canva-text small-copy mt-3"
+                                    >
+                                        Power BI, KPI analysis, reporting,
+                                        dashboards, data visualization, and
+                                        stakeholder-ready storytelling.
                                     </p>
-                                    <p data-template-id="case-study-meta-tools" class="canva-text text-[#b7c5c7]" style="color: rgb(183, 197, 199); font-weight: 400; font-style: normal; font-size: 16px;">
-                                        Power BI SharePoint Excel ArcGIS Oracle
+                                </article>
+
+                                <article
+                                    data-template-id="expertise-card-2"
+                                    class="canva-card card-hover rounded-2xl border border-white/10 bg-[#10282d] p-5"
+                                >
+                                    <i
+                                        data-lucide="workflow"
+                                        class="w-5 h-5 text-[#d8a761]"
+                                    ></i>
+
+                                    <h3
+                                        data-template-id="expertise-card-2-title"
+                                        class="canva-text mt-4 font-bold text-lg text-[#f3efe6]"
+                                    >
+                                        Data &amp; Automation
+                                    </h3>
+
+                                    <p
+                                        data-template-id="expertise-card-2-copy"
+                                        class="canva-text small-copy mt-3"
+                                    >
+                                        Python, SQL, ETL, forecasting, data
+                                        modeling, machine learning, and workflow
+                                        automation.
+                                    </p>
+                                </article>
+
+                                <article
+                                    data-template-id="expertise-card-3"
+                                    class="canva-card card-hover rounded-2xl border border-white/10 bg-[#10282d] p-5"
+                                >
+                                    <i
+                                        data-lucide="map"
+                                        class="w-5 h-5 text-[#8dd4c5]"
+                                    ></i>
+
+                                    <h3
+                                        data-template-id="expertise-card-3-title"
+                                        class="canva-text mt-4 font-bold text-lg text-[#f3efe6]"
+                                    >
+                                        Spatial Thinking
+                                    </h3>
+
+                                    <p
+                                        data-template-id="expertise-card-3-copy"
+                                        class="canva-text small-copy mt-3"
+                                    >
+                                        ArcGIS, transportation planning, asset
+                                        management, geospatial analytics, and
+                                        infrastructure context.
+                                    </p>
+                                </article>
+
+                                <article
+                                    data-template-id="expertise-card-4"
+                                    class="canva-card card-hover rounded-2xl border border-white/10 bg-[#10282d] p-5"
+                                >
+                                    <i
+                                        data-lucide="users"
+                                        class="w-5 h-5 text-[#d8a761]"
+                                    ></i>
+
+                                    <h3
+                                        data-template-id="expertise-card-4-title"
+                                        class="canva-text mt-4 font-bold text-lg text-[#f3efe6]"
+                                    >
+                                        Human-Centered Delivery
+                                    </h3>
+
+                                    <p
+                                        data-template-id="expertise-card-4-copy"
+                                        class="canva-text small-copy mt-3"
+                                    >
+                                        Project coordination, customer support,
+                                        cross-functional collaboration, and
+                                        multilingual communication.
+                                    </p>
+                                </article>
+
+                            </div>
+
+                        </section>
+
+                        <!-- JOURNEY / EXPERIENCE -->
+                        <section
+                            id="journey"
+                            class="pt-24 reveal"
+                        >
+
+                            <div class="mb-10">
+
+                                <p
+                                    data-template-id="journey-eyebrow"
+                                    class="canva-text eyebrow mb-3"
+                                >
+                                    Selected Experience
+                                </p>
+
+                                <h2
+                                    data-template-id="journey-title"
+                                    class="canva-text section-title"
+                                >
+                                    A path built through curiosity, systems, and impact.
+                                </h2>
+
+                                <p
+                                    data-template-id="journey-copy"
+                                    class="canva-text body-copy max-w-2xl mt-3"
+                                >
+                                    From data wrangling and visualization to
+                                    statewide planning and automation, each
+                                    chapter has added a new way to solve
+                                    meaningful problems.
+                                </p>
+
+                            </div>
+
+                            <div class="timeline relative space-y-7">
+
+                                <!-- Job 1 -->
+                                <article class="relative pl-10">
+
+                                    <div class="timeline-dot absolute left-0 top-7"></div>
+
+                                    <div
+                                        data-template-id="job-card-1"
+                                        class="canva-card card-hover rounded-[24px] border border-white/10 bg-[#10282d] overflow-hidden"
+                                    >
+                                        <div class="grid lg:grid-cols-[1fr_220px]">
+
+                                            <div class="p-6 md:p-7">
+
+                                                <div class="flex flex-wrap items-center gap-3 mb-3">
+
+                                                    <span
+                                                        data-template-id="job-1-date"
+                                                        class="canva-tag px-3 py-1 rounded-full text-xs uppercase tracking-[0.14em] bg-[#18383f] text-[#8dd4c5]"
+                                                    >
+                                                        Jul 2024 — Present
+                                                    </span>
+
+                                                    <span
+                                                        data-template-id="job-1-location"
+                                                        class="canva-text text-xs uppercase tracking-[0.14em] text-[#7d989d]"
+                                                    >
+                                                        Jefferson City, MO • Hybrid
+                                                    </span>
+
+                                                </div>
+
+                                                <h3
+                                                    data-template-id="job-1-title"
+                                                    class="canva-text text-2xl font-bold text-[#f3efe6]"
+                                                >
+                                                    Transportation Planner
+                                                </h3>
+
+                                                <p
+                                                    data-template-id="job-1-company"
+                                                    class="canva-text text-[#d8a761] mt-1"
+                                                >
+                                                    MoDOT
+                                                </p>
+
+                                                <p
+                                                    data-template-id="job-1-summary"
+                                                    class="canva-text body-copy mt-4"
+                                                >
+                                                    Leading asset management and
+                                                    performance analytics work
+                                                    across a $14B infrastructure
+                                                    portfolio while shaping clearer,
+                                                    more actionable statewide
+                                                    planning decisions.
+                                                </p>
+
+                                            </div>
+
+                                            <div class="relative min-h-[230px] image-mask">
+
+                                                <img
+                                                    data-template-id="job-1-image"
+                                                    loading="lazy"
+                                                    class="canva-image absolute inset-0 w-full h-full object-cover"
+                                                    src="https://images.pexels.com/photos/29617301/pexels-photo-29617301.jpeg"
+                                                    alt="Aerial view of a highway interchange"
+                                                >
+
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                </article>
+
+                                <!-- Job 2 -->
+                                <article class="relative pl-10">
+
+                                    <div class="timeline-dot absolute left-0 top-7"></div>
+
+                                    <div
+                                        data-template-id="job-card-2"
+                                        class="canva-card card-hover rounded-[24px] border border-white/10 bg-[#10282d] overflow-hidden"
+                                    >
+                                        <div class="grid lg:grid-cols-[1fr_220px]">
+
+                                            <div class="p-6 md:p-7">
+
+                                                <div class="flex flex-wrap items-center gap-3 mb-3">
+
+                                                    <span
+                                                        data-template-id="job-2-date"
+                                                        class="canva-tag px-3 py-1 rounded-full text-xs uppercase tracking-[0.14em] bg-[#18383f] text-[#8dd4c5]"
+                                                    >
+                                                        Feb 2024 — Present
+                                                    </span>
+
+                                                    <span
+                                                        data-template-id="job-2-location"
+                                                        class="canva-text text-xs uppercase tracking-[0.14em] text-[#7d989d]"
+                                                    >
+                                                        Remote
+                                                    </span>
+
+                                                </div>
+
+                                                <h3
+                                                    data-template-id="job-2-title"
+                                                    class="canva-text text-2xl font-bold text-[#f3efe6]"
+                                                >
+                                                    Python Developer
+                                                </h3>
+
+                                                <p
+                                                    data-template-id="job-2-company"
+                                                    class="canva-text text-[#d8a761] mt-1"
+                                                >
+                                                    Freelance
+                                                </p>
+
+                                                <p
+                                                    data-template-id="job-2-summary"
+                                                    class="canva-text body-copy mt-4"
+                                                >
+                                                    Designed intelligent scheduling
+                                                    systems and live analytics tools
+                                                    that translate complex logic into
+                                                    practical, user-friendly workflows.
+                                                </p>
+
+                                            </div>
+
+                                            <div class="relative min-h-[230px] image-mask">
+
+                                                <img
+                                                    data-template-id="job-2-image"
+                                                    loading="lazy"
+                                                    class="canva-image absolute inset-0 w-full h-full object-cover"
+                                                    src="https://images.pexels.com/photos/10816120/pexels-photo-10816120.jpeg"
+                                                    alt="Programming code displayed on a computer screen"
+                                                >
+
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                </article>
+
+                                <!-- Hidden Jobs -->
+                                <div
+                                    id="timeline-expanded-jobs"
+                                    class="space-y-7 hidden"
+                                >
+
+                                    <!-- Job 3 -->
+                                    <article class="relative pl-10">
+
+                                        <div class="timeline-dot absolute left-0 top-7"></div>
+
+                                        <div
+                                            data-template-id="job-card-3"
+                                            class="canva-card card-hover rounded-[24px] border border-white/10 bg-[#10282d] overflow-hidden"
+                                        >
+                                            <div class="grid lg:grid-cols-[1fr_220px]">
+
+                                                <div class="p-6 md:p-7">
+
+                                                    <div class="flex flex-wrap items-center gap-3 mb-3">
+
+                                                        <span
+                                                            data-template-id="job-3-date"
+                                                            class="canva-tag px-3 py-1 rounded-full text-xs uppercase tracking-[0.14em] bg-[#18383f] text-[#8dd4c5]"
+                                                        >
+                                                            Oct 2022 — Aug 2023
+                                                        </span>
+
+                                                        <span
+                                                            data-template-id="job-3-location"
+                                                            class="canva-text text-xs uppercase tracking-[0.14em] text-[#7d989d]"
+                                                        >
+                                                            Remote
+                                                        </span>
+
+                                                    </div>
+
+                                                    <h3
+                                                        data-template-id="job-3-title"
+                                                        class="canva-text text-2xl font-bold text-[#f3efe6]"
+                                                    >
+                                                        Data Entry &amp; Mapping Analyst
+                                                    </h3>
+
+                                                    <p
+                                                        data-template-id="job-3-company"
+                                                        class="canva-text text-[#d8a761] mt-1"
+                                                    >
+                                                        Jensen Partners
+                                                    </p>
+
+                                                    <p
+                                                        data-template-id="job-3-summary"
+                                                        class="canva-text body-copy mt-4"
+                                                    >
+                                                        Led visualization updates for
+                                                        alternative-investment clients,
+                                                        improving data accuracy by 90%
+                                                        through validation protocols and
+                                                        cross-team collaboration.
+                                                    </p>
+
+                                                </div>
+
+                                                <div class="relative min-h-[230px] image-mask">
+
+                                                    <img
+                                                        data-template-id="job-3-image"
+                                                        loading="lazy"
+                                                        class="canva-image absolute inset-0 w-full h-full object-cover"
+                                                        src="https://images.pexels.com/photos/3862630/pexels-photo-3862630.jpeg"
+                                                        alt="Laptop displaying design and data visualization work"
+                                                    >
+
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+                                    </article>
+
+                                    <!-- Job 4 -->
+                                    <article class="relative pl-10">
+
+                                        <div class="timeline-dot absolute left-0 top-7"></div>
+
+                                        <div
+                                            data-template-id="job-card-4"
+                                            class="canva-card card-hover rounded-[24px] border border-white/10 bg-[#10282d] overflow-hidden"
+                                        >
+                                            <div class="grid lg:grid-cols-[1fr_220px]">
+
+                                                <div class="p-6 md:p-7">
+
+                                                    <div class="flex flex-wrap items-center gap-3 mb-3">
+
+                                                        <span
+                                                            data-template-id="job-4-date"
+                                                            class="canva-tag px-3 py-1 rounded-full text-xs uppercase tracking-[0.14em] bg-[#18383f] text-[#8dd4c5]"
+                                                        >
+                                                            Jun 2022 — Jul 2022
+                                                        </span>
+
+                                                        <span
+                                                            data-template-id="job-4-location"
+                                                            class="canva-text text-xs uppercase tracking-[0.14em] text-[#7d989d]"
+                                                        >
+                                                            Remote
+                                                        </span>
+
+                                                    </div>
+
+                                                    <h3
+                                                        data-template-id="job-4-title"
+                                                        class="canva-text text-2xl font-bold text-[#f3efe6]"
+                                                    >
+                                                        Data Analyst Intern
+                                                    </h3>
+
+                                                    <p
+                                                        data-template-id="job-4-company"
+                                                        class="canva-text text-[#d8a761] mt-1"
+                                                    >
+                                                        Amnesia Media
+                                                    </p>
+
+                                                    <p
+                                                        data-template-id="job-4-summary"
+                                                        class="canva-text body-copy mt-4"
+                                                    >
+                                                        Partnered with data scientists
+                                                        to validate AI forecasting
+                                                        models and transformed technical
+                                                        discoveries into executive-ready
+                                                        presentations.
+                                                    </p>
+
+                                                </div>
+
+                                                <div class="relative min-h-[230px] image-mask">
+
+                                                    <img
+                                                        data-template-id="job-4-image"
+                                                        loading="lazy"
+                                                        class="canva-image absolute inset-0 w-full h-full object-cover"
+                                                        src="https://images.pexels.com/photos/5632399/pexels-photo-5632399.jpeg"
+                                                        alt="Analytics dashboard displayed on a computer"
+                                                    >
+
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+                                    </article>
+
+                                    <!-- Job 5 -->
+                                    <article class="relative pl-10">
+
+                                        <div class="timeline-dot absolute left-0 top-7"></div>
+
+                                        <div
+                                            data-template-id="job-card-5"
+                                            class="canva-card card-hover rounded-[24px] border border-white/10 bg-[#10282d] overflow-hidden"
+                                        >
+                                            <div class="grid lg:grid-cols-[1fr_220px]">
+
+                                                <div class="p-6 md:p-7">
+
+                                                    <div class="flex flex-wrap items-center gap-3 mb-3">
+
+                                                        <span
+                                                            data-template-id="job-5-date"
+                                                            class="canva-tag px-3 py-1 rounded-full text-xs uppercase tracking-[0.14em] bg-[#18383f] text-[#8dd4c5]"
+                                                        >
+                                                            Mar 2020 — Jun 2020
+                                                        </span>
+
+                                                        <span
+                                                            data-template-id="job-5-location"
+                                                            class="canva-text text-xs uppercase tracking-[0.14em] text-[#7d989d]"
+                                                        >
+                                                            Seoul, South Korea
+                                                        </span>
+
+                                                    </div>
+
+                                                    <h3
+                                                        data-template-id="job-5-title"
+                                                        class="canva-text text-2xl font-bold text-[#f3efe6]"
+                                                    >
+                                                        Design &amp; Research Developer
+                                                    </h3>
+
+                                                    <p
+                                                        data-template-id="job-5-company"
+                                                        class="canva-text text-[#d8a761] mt-1"
+                                                    >
+                                                        DYB — CREO
+                                                    </p>
+
+                                                    <p
+                                                        data-template-id="job-5-summary"
+                                                        class="canva-text body-copy mt-4"
+                                                    >
+                                                        Co-authored K–5 English
+                                                        coursebooks and conducted
+                                                        curriculum research that
+                                                        improved student comprehension
+                                                        across Seoul classrooms.
+                                                    </p>
+
+                                                </div>
+
+                                                <div class="relative min-h-[230px] image-mask">
+
+                                                    <img
+                                                        data-template-id="job-5-image"
+                                                        loading="lazy"
+                                                        class="canva-image absolute inset-0 w-full h-full object-cover"
+                                                        src="https://images.pexels.com/photos/6248959/pexels-photo-6248959.jpeg"
+                                                        alt="Professional reviewing charts on a laptop"
+                                                    >
+
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+                                    </article>
+
+                                </div>
+
+                                <!-- Expand Button -->
+                                <div class="relative pl-10 flex justify-center">
+
+                                    <button
+                                        id="timeline-expand-button"
+                                        type="button"
+                                        class="btn-outline text-sm uppercase tracking-[0.18em] text-[#8dd4c5]"
+                                    >
+                                        <span
+                                            data-template-id="timeline-expand-label"
+                                        >
+                                            More Experience
+                                        </span>
+                                    </button>
+
+                                </div>
+
+                            </div>
+
+                        </section>
+
+                        <!-- EDUCATION -->
+                        <section
+                            id="education"
+                            class="pt-24 reveal"
+                        >
+
+                            <div class="mb-8">
+
+                                <p
+                                    data-template-id="education-eyebrow"
+                                    class="canva-text eyebrow mb-3"
+                                >
+                                    Foundation
+                                </p>
+
+                                <h2
+                                    data-template-id="education-title"
+                                    class="canva-text section-title"
+                                >
+                                    Learning in classrooms, code, and culture.
+                                </h2>
+
+                            </div>
+
+                            <div class="grid lg:grid-cols-3 gap-4">
+
+                                <article
+                                    data-template-id="education-card-1"
+                                    class="canva-card rounded-2xl border border-white/10 bg-[#10282d] p-5"
+                                >
+                                    <p
+                                        data-template-id="education-1-date"
+                                        class="canva-text text-xs uppercase tracking-[0.16em] text-[#8dd4c5]"
+                                    >
+                                        Completed Jun 2022
+                                    </p>
+
+                                    <h3
+                                        data-template-id="education-1-title"
+                                        class="canva-text mt-3 font-bold text-lg text-[#f3efe6]"
+                                    >
+                                        Data Analytics Boot Camp
+                                    </h3>
+
+                                    <p
+                                        data-template-id="education-1-school"
+                                        class="canva-text text-[#d8a761] mt-2 text-sm"
+                                    >
+                                        iXperience • Remote
+                                    </p>
+
+                                    <p
+                                        data-template-id="education-1-copy"
+                                        class="canva-text small-copy mt-4"
+                                    >
+                                        Focused on data wrangling, hypothesis
+                                        testing, dashboarding, Python, SQL,
+                                        machine learning, Tableau, Plotly, and
+                                        Seaborn.
+                                    </p>
+                                </article>
+
+                                <article
+                                    data-template-id="education-card-2"
+                                    class="canva-card rounded-2xl border border-white/10 bg-[#10282d] p-5"
+                                >
+                                    <p
+                                        data-template-id="education-2-date"
+                                        class="canva-text text-xs uppercase tracking-[0.16em] text-[#8dd4c5]"
+                                    >
+                                        Graduated May 2022
+                                    </p>
+
+                                    <h3
+                                        data-template-id="education-2-title"
+                                        class="canva-text mt-3 font-bold text-lg text-[#f3efe6]"
+                                    >
+                                        B.A. Mathematical Sciences
+                                    </h3>
+
+                                    <p
+                                        data-template-id="education-2-school"
+                                        class="canva-text text-[#d8a761] mt-2 text-sm"
+                                    >
+                                        Westminster College • Fulton, MO
+                                    </p>
+
+                                    <p
+                                        data-template-id="education-2-copy"
+                                        class="canva-text small-copy mt-4"
+                                    >
+                                        Minor in Pre-Engineering with a strong
+                                        analytical foundation in mathematics
+                                        and problem-solving.
+                                    </p>
+                                </article>
+
+                                <article
+                                    data-template-id="education-card-3"
+                                    class="canva-card rounded-2xl border border-white/10 bg-[#10282d] p-5"
+                                >
+                                    <p
+                                        data-template-id="education-3-date"
+                                        class="canva-text text-xs uppercase tracking-[0.16em] text-[#8dd4c5]"
+                                    >
+                                        Graduated May 2019
+                                    </p>
+
+                                    <h3
+                                        data-template-id="education-3-title"
+                                        class="canva-text mt-3 font-bold text-lg text-[#f3efe6]"
+                                    >
+                                        A.S. Engineering, Honors
+                                    </h3>
+
+                                    <p
+                                        data-template-id="education-3-school"
+                                        class="canva-text text-[#d8a761] mt-2 text-sm"
+                                    >
+                                        State Fair Community College
+                                    </p>
+
+                                    <p
+                                        data-template-id="education-3-copy"
+                                        class="canva-text small-copy mt-4"
+                                    >
+                                        Built early technical confidence through
+                                        engineering coursework and disciplined
+                                        quantitative study.
+                                    </p>
+                                </article>
+
+                            </div>
+
+                            <!-- CULTURAL FOUNDATION -->
+                            <article
+                                data-template-id="education-cultural-card"
+                                class="canva-card mt-4 rounded-2xl border border-white/10 bg-[#10282d] p-5 md:p-6"
+                            >
+                                <div class="grid gap-4 md:grid-cols-[1fr_auto] md:items-start">
+                                    <div>
+                                        <p
+                                            data-template-id="education-cultural-eyebrow"
+                                            class="canva-text text-xs uppercase tracking-[0.16em] text-[#8dd4c5]"
+                                        >
+                                            Cultural Foundation
+                                        </p>
+
+                                        <h3
+                                            data-template-id="education-cultural-title"
+                                            class="canva-text mt-3 font-bold text-xl text-[#f3efe6]"
+                                        >
+                                            Independent Study &amp; Cultural Immersion
+                                        </h3>
+
+                                        <p
+                                            data-template-id="education-cultural-location"
+                                            class="canva-text text-[#d8a761] mt-2 text-sm"
+                                        >
+                                            South Korea
+                                        </p>
+                                    </div>
+
+                                    <div class="md:text-right text-sm text-[#8dd4c5]">
+                                        <p
+                                            data-template-id="education-cultural-date-1"
+                                            class="canva-text"
+                                        >
+                                            August 2019 — June 2020
+                                        </p>
+
+                                        <p
+                                            data-template-id="education-cultural-date-2"
+                                            class="canva-text mt-1"
+                                        >
+                                            July 2023 — February 2024
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div class="mt-5 flex items-start gap-3">
+                                    <span
+                                        class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#8dd4c5]"
+                                        aria-hidden="true"
+                                    ></span>
+
+                                    <p
+                                        data-template-id="education-cultural-copy"
+                                        class="canva-text small-copy"
+                                    >
+                                        Pursued immersive cultural and language
+                                        experiences while independently
+                                        strengthening technical skills through
+                                        coding bootcamp study and practical
+                                        Python development. Developed
+                                        adaptability, cross-cultural
+                                        communication, and resilience—qualities
+                                        that continue to strengthen my
+                                        professional and analytical approach.
                                     </p>
                                 </div>
-                                <div>
-                                    <p data-template-id="case-study-meta-timeline-label" class="canva-text text-xs uppercase tracking-[0.18em] text-[#8dd4c5] mb-2" style="color: rgb(141, 212, 197); font-weight: 700; font-style: normal; font-size: 12px; letter-spacing: 0.18rem;">
-                                        Timeline
+                            </article>
+
+                        </section>
+
+                        <!-- CERTIFICATIONS -->
+                        <section
+                            id="certificates"
+                            class="pt-24 pb-20 reveal"
+                        >
+
+                            <div class="mb-8">
+
+                                <p
+                                    data-template-id="certificates-eyebrow"
+                                    class="canva-text eyebrow mb-3"
+                                >
+                                    Continued Growth
+                                </p>
+
+                                <h2
+                                    data-template-id="certificates-title"
+                                    class="canva-text section-title"
+                                >
+                                    Credentials along the way.
+                                </h2>
+
+                            </div>
+
+                            <div
+                                data-template-id="certificates-panel"
+                                class="canva-panel rounded-[24px] border border-white/10 bg-[#10282d] p-6 md:p-7"
+                            >
+                                <div
+                                    class="grid md:grid-cols-2 gap-x-8 gap-y-4 text-[#d8e1e1]"
+                                >
+
+                                    <p
+                                        data-template-id="certificate-1"
+                                        class="canva-text"
+                                    >
+                                        Learning HubSpot CRM — LinkedIn
                                     </p>
-                                    <p data-template-id="case-study-meta-timeline" class="canva-text text-[#b7c5c7]" style="color: rgb(183, 197, 199); font-weight: 400; font-style: normal; font-size: 16px;">
-                                        3 months
+
+                                    <p
+                                        data-template-id="certificate-2"
+                                        class="canva-text"
+                                    >
+                                        Excel PivotTables: Mastering PivotTables
+                                        and Pivot Charts — LinkedIn
                                     </p>
-                                </div>
-                                <div>
-                                    <p data-template-id="case-study-meta-impact-label" class="canva-text text-xs uppercase tracking-[0.18em] text-[#8dd4c5] mb-2" style="color: rgb(141, 212, 197); font-weight: 700; font-style: normal; font-size: 12px; letter-spacing: 0.18rem;">
-                                        Key Results
+
+                                    <p
+                                        data-template-id="certificate-3"
+                                        class="canva-text"
+                                    >
+                                        Transportation Planning Process —
+                                        National Transit Institute
                                     </p>
-                                    <p data-template-id="case-study-meta-impact" class="canva-text text-[#b7c5c7]" style="color: rgb(183, 197, 199); font-weight: 400; font-style: normal; font-size: 16px;">
-                                        Going from Oracle - looking at rows and columns, to now having visuals displaying key metrics
+
+                                    <p
+                                        data-template-id="certificate-4"
+                                        class="canva-text"
+                                    >
+                                        Learning Power BI Desktop — LinkedIn
                                     </p>
+
                                 </div>
                             </div>
-                        </div>
-                    </section>
-                </div>
-            </main>
-            <footer class="border-t border-white/10">
-                <div class="max-w-[1400px] mx-auto px-6 lg:px-10 py-8 flex flex-col md:flex-row justify-between gap-4">
-                    <p data-template-id="footer-left" class="canva-text text-sm text-[#9fb2b5]" style="color: rgb(159, 178, 181); font-weight: 400; font-style: normal; font-size: 14px;">
-                        Built at the intersection of logic, empathy, and design.
-                    </p>
-                    <p data-template-id="footer-right" class="canva-text text-sm text-[#9fb2b5]" style="color: rgb(159, 178, 181); font-weight: 400; font-style: normal; font-size: 14px;">
-                        Soccer • Travel • Cooking • Community
-                    </p>
-                </div>
-            </footer>
-        </div>
-        <script src="js/main.js">
-        </script>
-    </body>
+
+                        </section>
+
+                    </div>
+
+                </section>
+
+            </div>
+
+        </main>
+
+        <!-- FOOTER -->
+        <footer class="border-t border-white/10">
+
+            <div
+                class="max-w-[1400px] mx-auto px-6 lg:px-10 py-8 flex flex-col md:flex-row justify-between gap-4"
+            >
+
+                <p
+                    data-template-id="footer-left"
+                    class="canva-text text-sm text-[#9fb2b5]"
+                >
+                    Built at the intersection of logic, empathy, and design.
+                </p>
+
+                <p
+                    data-template-id="footer-right"
+                    class="canva-text text-sm text-[#9fb2b5]"
+                >
+                    Soccer • Travel • Cooking • Community
+                </p>
+
+            </div>
+
+        </footer>
+
+    </div>
+
+    <!-- Custom JavaScript -->
+    <script src="js/main.js"></script>
+
+</body>
 </html>
