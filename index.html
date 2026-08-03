@@ -69,49 +69,51 @@
                     </p>
                 </a>
 
-                <!-- Desktop Navigation -->
+                <!-- Quick Links
+                     Hidden at the top of the page. They appear after the
+                     visitor scrolls past the hero action buttons. -->
                 <nav
-                    id="resume-nav"
-                    class="hidden md:flex items-center gap-7 text-xs uppercase tracking-[0.18em] text-[#b7c5c7]"
-                    aria-label="Main navigation"
+                    id="header-quick-links"
+                    class="hidden md:flex items-center gap-3 opacity-0 pointer-events-none translate-y-2 transition-all duration-300"
+                    aria-label="Quick links"
+                    aria-hidden="true"
                 >
                     <a
-                        href="#expertise"
-                        data-template-id="top-nav-expertise"
-                        class="canva-link nav-link-top hover:text-white transition"
-                    >
-                        Expertise
-                    </a>
-
-                    <a
-                        href="#journey"
-                        data-template-id="top-nav-journey"
-                        class="canva-link nav-link-top hover:text-white transition"
-                    >
-                        Journey
-                    </a>
-
-                    <a
-                        href="#education"
-                        data-template-id="top-nav-education"
-                        class="canva-link nav-link-top hover:text-white transition"
-                    >
-                        Education
-                    </a>
-
-                    <a
-                        href="#certificates"
-                        data-template-id="top-nav-certificates"
-                        class="canva-link nav-link-top hover:text-white transition"
-                    >
-                        Certificates
-                    </a>
-
-                    <a
                         href="portfolio.html"
-                        class="canva-link nav-link-top hover:text-white transition"
+                        class="canva-link btn-outline text-xs bg-white/[0.03]"
                     >
-                        Portfolio
+                        <i
+                            data-lucide="briefcase"
+                            class="w-4 h-4"
+                        ></i>
+
+                        <span>View My Work</span>
+                    </a>
+
+                    <a
+                        href="resume.html"
+                        class="canva-link btn-outline text-xs bg-white/[0.03]"
+                    >
+                        <i
+                            data-lucide="file-text"
+                            class="w-4 h-4"
+                        ></i>
+
+                        <span>Resume</span>
+                    </a>
+
+                    <a
+                        href="https://www.linkedin.com/in/karina-gessel-esquivel/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="canva-link btn-outline text-xs bg-white/[0.03]"
+                    >
+                        <i
+                            data-lucide="linkedin"
+                            class="w-4 h-4"
+                        ></i>
+
+                        <span>LinkedIn + Connect</span>
                     </a>
                 </nav>
 
@@ -223,7 +225,7 @@
                                     organizations make smarter decisions.
                                 </p>
 
-                                <div class="mt-8 flex flex-wrap gap-3">
+                                <div id="hero-action-buttons" class="mt-8 flex flex-wrap gap-3">
 
     <!-- View My Work -->
     <a
@@ -770,7 +772,7 @@
                                                         data-template-id="job-3-image"
                                                         loading="lazy"
                                                         class="canva-image absolute inset-0 w-full h-full object-cover"
-                                                        src="https://images.pexels.com/photos/3862630/pexels-photo-3862630.jpeg"
+                                                        src="https://tse4.mm.bing.net/th/id/OIP.fos76FBn2pTD3hpsKJDqYwHaHa?r=0&rs=1&pid=ImgDetMain&o=7&rm=3"
                                                         alt="Laptop displaying design and data visualization work"
                                                     >
 
@@ -845,7 +847,7 @@
                                                         data-template-id="job-4-image"
                                                         loading="lazy"
                                                         class="canva-image absolute inset-0 w-full h-full object-cover"
-                                                        src="https://images.pexels.com/photos/5632399/pexels-photo-5632399.jpeg"
+                                                        src="https://mgmagazine.com/wp-content/uploads/2021/12/amnesia_logo_mg_Magazine_mgretailler-1392x928.jpg.webp"
                                                         alt="Analytics dashboard displayed on a computer"
                                                     >
 
@@ -920,7 +922,7 @@
                                                         data-template-id="job-5-image"
                                                         loading="lazy"
                                                         class="canva-image absolute inset-0 w-full h-full object-cover"
-                                                        src="https://images.pexels.com/photos/6248959/pexels-photo-6248959.jpeg"
+                                                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_Y58awnBoPXaAp17e-w1LqstopAVs47z-t6v4mzBGsw&s=10"
                                                         alt="Professional reviewing charts on a laptop"
                                                     >
 
@@ -1122,24 +1124,12 @@
                                             data-template-id="education-cultural-date-1"
                                             class="canva-text"
                                         >
-                                            August 2019 — June 2020
-                                        </p>
-
-                                        <p
-                                            data-template-id="education-cultural-date-2"
-                                            class="canva-text mt-1"
-                                        >
-                                            July 2023 — February 2024
+                                            IMMERSED 2019–2020 &amp; 2023–2024
                                         </p>
                                     </div>
                                 </div>
 
                                 <div class="mt-5 flex items-start gap-3">
-                                    <span
-                                        class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#8dd4c5]"
-                                        aria-hidden="true"
-                                    ></span>
-
                                     <p
                                         data-template-id="education-cultural-copy"
                                         class="canva-text small-copy"

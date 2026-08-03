@@ -1,0 +1,505 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>DRE &amp; Phlebotomy Dashboards | Karina Esquivel</title>
+
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+
+    <!-- Lucide Icons -->
+    <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js"></script>
+
+    <!-- Fonts -->
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Fraunces:opsz,wght@9.144,600;9.144,700&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Custom CSS -->
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+</head>
+
+<body
+    data-page="dre-phlebotomy-dashboards"
+    data-template-id="__page-root"
+    class="w-full min-h-screen grain"
+    style="background: linear-gradient(rgb(7, 20, 23), rgb(9, 25, 29));"
+>
+
+    <div class="w-full">
+
+        <!-- =====================================================
+             HEADER
+        ====================================================== -->
+
+        <header
+            class="sticky top-0 z-50 w-full border-b border-white/10 bg-gradient-to-b from-[#0c1f23] to-[#09191d] backdrop-blur-md"
+        >
+            <div
+                class="max-w-[1400px] mx-auto px-6 lg:px-10 py-5 flex items-center justify-between gap-6"
+            >
+
+                <!-- Name -->
+                <a
+                    href="index.html"
+                    class="canva-link flex items-center gap-3"
+                    aria-label="Return to homepage"
+                >
+                    <div class="w-2.5 h-2.5 rounded-full bg-[#8dd4c5]"></div>
+
+                    <p
+                        id="brand-name"
+                        data-template-id="brand-name"
+                        class="canva-text uppercase tracking-[0.28em] text-xs text-[#b7c5c7]"
+                    >
+                        Karina Esquivel
+                    </p>
+                </a>
+
+                <!-- Back to Portfolio -->
+                <nav class="flex items-center gap-4">
+
+                    <a
+                        href="portfolio.html"
+                        class="canva-link btn-outline text-xs uppercase tracking-[0.18em]"
+                    >
+                        <i
+                            data-lucide="arrow-left"
+                            class="w-4 h-4"
+                        ></i>
+
+                        <span>Back to Portfolio</span>
+                    </a>
+
+                </nav>
+
+            </div>
+        </header>
+
+        <!-- =====================================================
+             MAIN CONTENT
+        ====================================================== -->
+
+        <main class="w-full">
+
+            <div id="case-study-view">
+
+                <section
+                    class="max-w-[1400px] mx-auto px-6 lg:px-10 pt-16 lg:pt-24 pb-20"
+                >
+
+                    <!-- =================================================
+                         HERO
+                    ================================================== -->
+
+                    <div class="mb-16">
+
+                        <div class="max-w-5xl">
+
+                            <p
+                                class="uppercase tracking-[0.28em] text-xs text-[#8dd4c5] mb-4"
+                            >
+                                Case Study
+                            </p>
+
+                            <h1
+                                class="display text-[3.2rem] sm:text-[5rem] lg:text-[6rem] leading-[0.98] text-[#f3efe6]"
+                            >
+                                DRE &amp; Phlebotomy Dashboards
+                            </h1>
+
+                            <p
+                                class="mt-6 text-xl text-[#b7c5c7] max-w-3xl leading-8"
+                            >
+                                Two public-facing geospatial dashboards that help
+                                users locate Drug Recognition Experts and
+                                phlebotomists by Missouri county through
+                                interactive maps and contact information.
+                            </p>
+
+                            <!-- Technology Badges -->
+                            <div class="flex flex-wrap gap-3 mt-8">
+
+                                <span class="px-4 py-2 rounded-full border border-white/15">
+                                    Power BI
+                                </span>
+
+                                <span class="px-4 py-2 rounded-full border border-white/15">
+                                    ArcGIS
+                                </span>
+
+                                <span class="px-4 py-2 rounded-full border border-white/15">
+                                    Geospatial Analytics
+                                </span>
+
+                                <span class="px-4 py-2 rounded-full border border-white/15">
+                                    Public Information
+                                </span>
+
+                            </div>
+                            
+                        </div>
+
+                    </div>
+
+                    <!-- =================================================
+                         CASE STUDY CONTENT
+                    ================================================== -->
+
+                    <div
+                        id="case-study-content"
+                        class="space-y-12"
+                    >
+
+                        <!-- =============================================
+                             THE CHALLENGE
+                        ============================================== -->
+
+                        <div>
+
+                            <!-- Challenge Text -->
+                            <div class="max-w-4xl">
+
+                                <h2
+                                    data-template-id="case-study-section-1-title"
+                                    class="canva-text display text-2xl mb-4"
+                                    style="color: rgb(243, 239, 230); font-weight: 700; font-style: normal; font-size: 24px;"
+                                >
+                                    The Challenge
+                                </h2>
+
+                                <p
+                                    data-template-id="case-study-section-1-content"
+                                    class="canva-text text-[#b7c5c7] leading-7"
+                                    style="color: rgb(183, 197, 199); font-weight: 400; font-style: normal; font-size: 16px; line-height: 1.6;"
+                                >
+                                    Contact information for Drug Recognition
+                                    Experts and trained phlebotomists needed to be
+                                    easier for law-enforcement partners and the
+                                    public to locate. A traditional list or
+                                    spreadsheet made it difficult to understand
+                                    geographic coverage, identify the closest
+                                    available resource, and quickly access the
+                                    appropriate county-level contact information.
+                                </p>
+
+                            </div>
+
+                            <!-- Embedded DRE Dashboard -->
+                            <div class="mt-8 max-w-5xl mx-auto">
+
+                                <div
+                                    class="mb-3 flex items-center gap-2 text-xs uppercase tracking-[0.18em] text-[#8dd4c5]"
+                                >
+                                    <span
+                                        class="h-2 w-2 rounded-full bg-[#8dd4c5]"
+                                        aria-hidden="true"
+                                    ></span>
+
+                                    <span>Live DRE Dashboard</span>
+                                </div>
+
+                                <div
+                                    class="relative h-[460px] sm:h-[500px] lg:h-[540px] overflow-hidden rounded-[28px] border border-white/10 bg-white transition duration-300 hover:border-[#8dd4c5]/60"
+                                >
+                                    <iframe
+                                        title="Missouri Drug Recognition Expert Dashboard"
+                                        class="absolute inset-0 block h-full w-full"
+                                        src="https://app.powerbigov.us/view?r=eyJrIjoiZjgyZDliNmUtZTNlMC00N2NkLTk0NjctM2UyZmMwN2NkZDM1IiwidCI6ImI4NDZiMDEwLTEyMjgtNDAwOC04MTYzLWY3NmFhOThlNWFjZCJ9"
+                                        frameborder="0"
+                                        loading="lazy"
+                                        allowfullscreen
+                                    ></iframe>
+                                </div>
+
+                                <div
+                                    class="flex flex-col gap-2 border-x border-b border-white/10 rounded-b-2xl px-5 py-4 bg-[#071417]"
+                                >
+                                    <p class="canva-text small-copy">
+                                        Explore Drug Recognition Expert coverage
+                                        and contact information by Missouri county.
+                                    </p>
+
+                                    <a
+                                        href="https://www.savemolives.com/mcrs/impaired-driving"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        class="canva-link text-sm text-[#8dd4c5] hover:text-white transition"
+                                    >
+                                        View on the Missouri Coalition for Roadway Safety website ↗
+                                    </a>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <!-- =============================================
+                             THE SOLUTION
+                        ============================================== -->
+
+                        <div>
+
+                            <!-- Solution Text -->
+                            <div class="max-w-4xl">
+
+                                <h2
+                                    data-template-id="case-study-section-2-title"
+                                    class="canva-text display text-2xl mb-4"
+                                    style="color: rgb(243, 239, 230); font-weight: 700; font-style: normal; font-size: 24px;"
+                                >
+                                    The Solution
+                                </h2>
+
+                                <p
+                                    data-template-id="case-study-section-2-content"
+                                    class="canva-text text-[#b7c5c7] leading-7"
+                                    style="color: rgb(183, 197, 199); font-weight: 400; font-style: normal; font-size: 16px; line-height: 1.6;"
+                                >
+                                    The solution combined interactive Power BI
+                                    reporting with county-based geospatial
+                                    visualization. Users can hover over or select
+                                    a Missouri county, review the available local
+                                    contacts, and move between the statewide map
+                                    and detailed information. Separate dashboards
+                                    were created for Drug Recognition Experts and
+                                    phlebotomy resources while maintaining a
+                                    consistent, easy-to-use experience.
+                                </p>
+
+                            </div>
+
+                            <!-- Embedded Phlebotomy Dashboard -->
+                            <div class="mt-8 max-w-5xl mx-auto">
+
+                                <div
+                                    class="mb-3 flex items-center gap-2 text-xs uppercase tracking-[0.18em] text-[#8dd4c5]"
+                                >
+                                    <span
+                                        class="h-2 w-2 rounded-full bg-[#8dd4c5]"
+                                        aria-hidden="true"
+                                    ></span>
+
+                                    <span>Live Phlebotomy Dashboard</span>
+                                </div>
+
+                                <div
+                                    class="relative h-[460px] sm:h-[500px] lg:h-[540px] overflow-hidden rounded-[28px] border border-white/10 bg-white transition duration-300 hover:border-[#8dd4c5]/60"
+                                >
+                                    <iframe
+                                        title="Missouri Phlebotomy Dashboard"
+                                        class="absolute inset-0 block h-full w-full"
+                                        src="https://app.powerbigov.us/view?r=eyJrIjoiMWQyYjQ4OTQtNjgxYi00MmM1LWFjOWUtM2ZiZjgwZjM4ZWFkIiwidCI6ImI4NDZiMDEwLTEyMjgtNDAwOC04MTYzLWY3NmFhOThlNWFjZCJ9"
+                                        frameborder="0"
+                                        loading="lazy"
+                                        allowfullscreen
+                                    ></iframe>
+                                </div>
+
+                                <div
+                                    class="flex flex-col gap-2 border-x border-b border-white/10 rounded-b-2xl px-5 py-4 bg-[#071417]"
+                                >
+                                    <p class="canva-text small-copy">
+                                        Explore county-level phlebotomy resources
+                                        and contact information across Missouri.
+                                    </p>
+
+                                    <a
+                                        href="https://www.savemolives.com/mcrs/impaired-driving"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        class="canva-link text-sm text-[#8dd4c5] hover:text-white transition"
+                                    >
+                                        View on the Missouri Coalition for Roadway Safety website ↗
+                                    </a>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <!-- =============================================
+                             IMPACT AND OUTCOMES
+                        ============================================== -->
+
+                        <div>
+
+                            <h2
+                                data-template-id="case-study-section-3-title"
+                                class="canva-text display text-2xl mb-4"
+                                style="color: rgb(243, 239, 230); font-weight: 700; font-style: normal; font-size: 24px;"
+                            >
+                                Impact &amp; Outcomes
+                            </h2>
+
+                            <p
+                                data-template-id="case-study-section-3-content"
+                                class="canva-text text-[#b7c5c7] leading-7 max-w-3xl"
+                                style="color: rgb(183, 197, 199); font-weight: 400; font-style: normal; font-size: 16px; line-height: 1.6;"
+                            >
+                                The dashboards made statewide resource information
+                                easier to explore and more practical to use. Instead
+                                of searching through static lists, users can quickly
+                                identify county-level coverage and access the
+                                relevant contact information through a visual,
+                                public-facing interface. The result supports faster
+                                coordination and clearer access to impaired-driving
+                                enforcement resources across Missouri.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <!-- =================================================
+                         PROJECT DETAILS
+                    ================================================== -->
+
+                    <div
+                        class="mt-16 rounded-[26px] border border-white/10 bg-[#10282d] p-6 md:p-8"
+                    >
+
+                        <h2
+                            data-template-id="case-study-meta-title"
+                            class="canva-text display text-2xl mb-6"
+                            style="color: rgb(243, 239, 230); font-weight: 700; font-style: normal; font-size: 24px;"
+                        >
+                            Project Details
+                        </h2>
+
+                        <div class="grid md:grid-cols-3 gap-8">
+
+                            <!-- Tools -->
+                            <div>
+
+                                <p
+                                    data-template-id="case-study-meta-tools-label"
+                                    class="canva-text text-xs uppercase tracking-[0.18em] text-[#8dd4c5] mb-2"
+                                    style="color: rgb(141, 212, 197); font-weight: 700; font-style: normal; font-size: 12px; letter-spacing: 0.18rem;"
+                                >
+                                    Tools &amp; Technologies
+                                </p>
+
+                                <p
+                                    data-template-id="case-study-meta-tools"
+                                    class="canva-text text-[#b7c5c7]"
+                                    style="color: rgb(183, 197, 199); font-weight: 400; font-style: normal; font-size: 16px;"
+                                >
+                                    Power BI, ArcGIS, Geospatial Analytics,
+                                    Public-Facing Data Visualization
+                                </p>
+
+                            </div>
+
+                            <!-- Timeline -->
+                            <div>
+
+                                <p
+                                    data-template-id="case-study-meta-timeline-label"
+                                    class="canva-text text-xs uppercase tracking-[0.18em] text-[#8dd4c5] mb-2"
+                                    style="color: rgb(141, 212, 197); font-weight: 700; font-style: normal; font-size: 12px; letter-spacing: 0.18rem;"
+                                >
+                                    Project Type
+                                </p>
+
+                                <p
+                                    data-template-id="case-study-meta-timeline"
+                                    class="canva-text text-[#b7c5c7]"
+                                    style="color: rgb(183, 197, 199); font-weight: 400; font-style: normal; font-size: 16px;"
+                                >
+                                    Public Safety Resource Dashboards
+                                </p>
+
+                            </div>
+
+                            <!-- Results -->
+                            <div>
+
+                                <p
+                                    data-template-id="case-study-meta-impact-label"
+                                    class="canva-text text-xs uppercase tracking-[0.18em] text-[#8dd4c5] mb-2"
+                                    style="color: rgb(141, 212, 197); font-weight: 700; font-style: normal; font-size: 12px; letter-spacing: 0.18rem;"
+                                >
+                                    Key Results
+                                </p>
+
+                                <p
+                                    data-template-id="case-study-meta-impact"
+                                    class="canva-text text-[#b7c5c7]"
+                                    style="color: rgb(183, 197, 199); font-weight: 400; font-style: normal; font-size: 16px;"
+                                >
+                                    County-Level Resource Discovery
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+            </div>
+
+        </main>
+
+        <!-- =====================================================
+             FOOTER
+        ====================================================== -->
+
+        <footer class="border-t border-white/10">
+
+            <div
+                class="max-w-[1400px] mx-auto px-6 lg:px-10 py-8 flex flex-col md:flex-row justify-between gap-4"
+            >
+
+                <p
+                    data-template-id="footer-left"
+                    class="canva-text text-sm text-[#9fb2b5]"
+                    style="color: rgb(159, 178, 181); font-weight: 400; font-style: normal; font-size: 14px;"
+                >
+                    Built at the intersection of logic, empathy, and design.
+                </p>
+
+                <p
+                    data-template-id="footer-right"
+                    class="canva-text text-sm text-[#9fb2b5]"
+                    style="color: rgb(159, 178, 181); font-weight: 400; font-style: normal; font-size: 14px;"
+                >
+                    Soccer • Travel • Cooking • Community
+                </p>
+
+            </div>
+
+        </footer>
+
+    </div>
+
+    <!-- Main JavaScript -->
+    <script src="js/main.js"></script>
+
+</body>
+
+</html>

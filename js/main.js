@@ -1,15 +1,15 @@
-// ---------------------------------------------
+// =========================================================
 // LUCIDE ICONS
-// ---------------------------------------------
+// =========================================================
 
 if (window.lucide) {
   lucide.createIcons();
 }
 
 
-// ---------------------------------------------
+// =========================================================
 // EXPERIENCE TIMELINE EXPAND / COLLAPSE
-// ---------------------------------------------
+// =========================================================
 
 const timelineExpandButton = document.getElementById(
   'timeline-expand-button'
@@ -45,36 +45,65 @@ if (timelineExpandButton && timelineExpandedJobs) {
 }
 
 
-// ---------------------------------------------
+// =========================================================
 // REVEAL ANIMATIONS
-// ---------------------------------------------
+// =========================================================
 
-const revealElements = document.querySelectorAll('.reveal');
+let revealObserver = null;
 
-if (revealElements.length) {
-  const observer = new IntersectionObserver(
+function initializeRevealAnimations() {
+  const revealElements =
+    document.querySelectorAll('.reveal');
+
+  if (!revealElements.length) {
+    return;
+  }
+
+  if (revealObserver) {
+    revealObserver.disconnect();
+  }
+
+  revealObserver = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           entry.target.classList.add('visible');
-          observer.unobserve(entry.target);
+          revealObserver.unobserve(entry.target);
         }
       });
     },
     {
-      threshold: 0.12
+      threshold: 0.08,
+      rootMargin: '0px 0px -40px 0px'
     }
   );
 
   revealElements.forEach((element) => {
-    observer.observe(element);
+    const position =
+      element.getBoundingClientRect();
+
+    const isVisibleNow =
+      position.top < window.innerHeight &&
+      position.bottom > 0;
+
+    if (isVisibleNow) {
+      element.classList.add('visible');
+    } else {
+      revealObserver.observe(element);
+    }
   });
 }
 
+initializeRevealAnimations();
 
-// ---------------------------------------------
+window.addEventListener('pageshow', () => {
+  initializeRevealAnimations();
+});
+
+
+// =========================================================
 // SMOOTH SCROLL FOR INTERNAL LINKS
-// ---------------------------------------------
+// =========================================================
 
 document.querySelectorAll('a[href^="#"]').forEach((link) => {
   link.addEventListener('click', (event) => {
@@ -102,9 +131,9 @@ document.querySelectorAll('a[href^="#"]').forEach((link) => {
 });
 
 
-// ---------------------------------------------
+// =========================================================
 // SIDE NAVIGATION SCROLL HIGHLIGHT
-// ---------------------------------------------
+// =========================================================
 
 const sideNavLinks = document.querySelectorAll(
   '.nav-link[data-section]'
@@ -162,177 +191,331 @@ window.addEventListener(
 );
 
 updateActiveSideNavigation();
-/* =========================================================
-   BRIDGE CHALLENGE IMAGE CAROUSEL
-========================================================= */
 
-const challengeCarouselImage = document.getElementById(
-    "challenge-carousel-image"
-);
 
-const challengeCarouselCaption = document.getElementById(
-    "challenge-carousel-caption"
-);
+// =========================================================
+// CASE STUDY IMAGE DATA
+// =========================================================
 
-const challengeCarouselCounter = document.getElementById(
-    "challenge-carousel-counter"
-);
+const currentPage = document.body.dataset.page || '';
 
-const challengePreviousButton = document.getElementById(
-    "challenge-prev-button"
-);
+const caseStudyImages = {
+  'bridge-condition': {
+    challenge: [
+      {
+        src: 'assets/images/bridge-challenge-1.png',
+        alt: 'Original bridge data example 1',
+        caption: 'Where bridge data is stored.'
+      },
+      {
+        src: 'assets/images/bridge-challenge-2.png',
+        alt: 'Original bridge data example 2',
+        caption: 'Additional bridge records from the source system.'
+      },
+      {
+        src: 'assets/images/bridge-challenge-3.png',
+        alt: 'Original bridge data example 3',
+        caption:
+          'Bridge condition information before dashboard development.'
+      },
+      {
+        src: 'assets/images/bridge-challenge-4.png',
+        alt: 'Original bridge data example 4',
+        caption:
+          'Complex data that users needed to interpret.'
+      }
+    ],
 
-const challengeNextButton = document.getElementById(
-    "challenge-next-button"
-);
+    solution: [
+      {
+        src: 'assets/images/bridge-solution-1.png',
+        alt: 'Bridge dashboard learning resource',
+        caption: 'Here is where I first started learning.'
+      },
+      {
+        src: 'assets/images/bridge-solution-2.png',
+        alt: 'Bridge dashboard design inspiration',
+        caption:
+          'Much of my early help and design inspiration came from this resource.'
+      },
+      {
+        src: 'assets/images/bridge-solution-3.png',
+        alt: 'Icons used during dashboard development',
+        caption:
+          'Icons were sourced here or created in Adobe Photoshop and Canva.'
+      },
+      {
+        src:
+          'https://www.spguides.com/wp-content/uploads/2024/02/Change-Data-Type-in-Power-BI.jpg',
+        alt: 'Power BI data transformation example',
+        caption:
+          'This represents the data-transformation stage, including cleaning, sorting, and formatting.'
+      }
+    ]
+  },
 
-if (
-    challengeCarouselImage &&
-    challengeCarouselCaption &&
-    challengeCarouselCounter &&
-    challengePreviousButton &&
-    challengeNextButton
-) {
-    const challengeImages = [
-        {
-            src: "assets/images/bridge-challenge-1.png",
-            alt: "Original bridge data example 1",
-            caption: "Where the data is stored."
-        },
-        {
-            src: "assets/images/bridge-challenge-2.png",
-            alt: "Original bridge data example 2",
-            caption: "The main menu page of data and where I went to get the specific data."
-        },
-        {
-            src: "assets/images/bridge-challenge-3.png",
-            alt: "Original bridge data example 3",
-            caption: "Bridge condition information before dashboard development."
-        },
-        {
-            src: "assets/images/bridge-challenge-4.png",
-            alt: "Original bridge data example 4",
-            caption: "Another example of the complex data public users needed to interpret. "
-        }
-    ];
+  'amp-dashboard': {
+    challenge: [
+      {
+        src: 'assets/images/amp-challenge-1.png',
+        alt: 'Original AMP data and reporting example',
+        caption: 'The original AMP data and reporting process.'
+      },
+      {
+        src: 'assets/images/amp-challenge-2.png',
+        alt: 'Additional AMP reporting example',
+        caption:
+          'The existing AMP reporting structure before dashboard development.'
+      }
+    ],
 
-    let currentChallengeImage = 0;
+    solution: [
+      {
+        src: 'assets/images/amp-solution-1.png',
+        alt: 'AMP Dashboard solution example 1',
+        caption: 'The overall AMP Dashboard reporting view.'
+      },
+      {
+        src: 'assets/images/amp-solution-2.png',
+        alt: 'AMP Dashboard solution example 2',
+        caption:
+          'Interactive navigation between reporting sections.'
+      },
+      {
+        src: 'assets/images/amp-solution-3.png',
+        alt: 'AMP Dashboard solution example 3',
+        caption:
+          'Filters help users focus on specific districts and reporting areas.'
+      },
+      {
+        src: 'assets/images/amp-solution-4.png',
+        alt: 'AMP Dashboard solution example 4',
+        caption:
+          'Visual summaries make AMP results easier to understand.'
+      }
+    ]
+  },
 
-    function updateChallengeCarousel() {
-        const selectedImage =
-            challengeImages[currentChallengeImage];
+  'ecnl-scheduling-engine': {
+    challenge: [
+      {
+        src: 'https://media1.tenor.com/images/150a384449082125a8bffbd805b9b856/tenor.gif?itemid=5499082',
+        alt: 'Original ECNL manual scheduling process',
+        caption: 'Me on the phone listening to this opportunity and knowing it CAN be done.'
+      }
+    ],
 
-        challengeCarouselImage.src = selectedImage.src;
-        challengeCarouselImage.alt = selectedImage.alt;
-        challengeCarouselCaption.textContent =
-            selectedImage.caption;
+    solution: [
+      {
+        src: 'assets/images/ecnl-solution-1.png',
+        alt: 'ECNL tournament analytics dashboard',
+        caption:
+          "The new ECNL dashboard tailored to their organization."
+      }
+    ]
+  },
 
-        challengeCarouselCounter.textContent =
-            `${currentChallengeImage + 1} / ${challengeImages.length}`;
-    }
+  'tp-d-tracker': {
+    challenge: [
+      {
+        src: 'assets/images/tp-d-challenge-1.png',
+        alt: 'Original TP-D tracking process',
+        caption:
+          'The original assignment and project-tracking process.'
+      }
+    ],
 
-    challengePreviousButton.addEventListener("click", () => {
-        currentChallengeImage =
-            (currentChallengeImage - 1 + challengeImages.length) %
-            challengeImages.length;
+    solution: [
+      {
+        src: 'assets/images/tp-d-solution-1.png',
+        alt: 'TP-D Tracker solution',
+        caption:
+          'Centralized tracking, filtering, and workflow visibility.'
+      }
+    ]
+  }
+};
 
-        updateChallengeCarousel();
-    });
+// =========================================================
+// REUSABLE CAROUSEL FUNCTION
+// =========================================================
 
-    challengeNextButton.addEventListener("click", () => {
-        currentChallengeImage =
-            (currentChallengeImage + 1) %
-            challengeImages.length;
+function initializeCarousel({
+  images,
+  imageElement,
+  captionElement,
+  counterElement,
+  previousButton,
+  nextButton
+}) {
+  if (
+    !imageElement ||
+    !captionElement ||
+    !counterElement ||
+    !previousButton ||
+    !nextButton
+  ) {
+    return;
+  }
 
-        updateChallengeCarousel();
-    });
+  if (!Array.isArray(images) || images.length === 0) {
+    previousButton.classList.add('hidden');
+    nextButton.classList.add('hidden');
+    counterElement.textContent = '0 / 0';
 
-    updateChallengeCarousel();
+    return;
+  }
+
+  let currentImageIndex = 0;
+
+  function updateCarousel() {
+    const selectedImage = images[currentImageIndex];
+
+    imageElement.src = selectedImage.src;
+    imageElement.alt = selectedImage.alt;
+    captionElement.textContent = selectedImage.caption;
+
+    counterElement.textContent =
+      `${currentImageIndex + 1} / ${images.length}`;
+  }
+
+  const hasMultipleImages = images.length > 1;
+
+  previousButton.classList.toggle(
+    'hidden',
+    !hasMultipleImages
+  );
+
+  nextButton.classList.toggle(
+    'hidden',
+    !hasMultipleImages
+  );
+
+  previousButton.addEventListener('click', () => {
+    currentImageIndex =
+      (currentImageIndex - 1 + images.length) %
+      images.length;
+
+    updateCarousel();
+  });
+
+  nextButton.addEventListener('click', () => {
+    currentImageIndex =
+      (currentImageIndex + 1) %
+      images.length;
+
+    updateCarousel();
+  });
+
+  updateCarousel();
 }
-/* =========================================================
-    BRIDGE SOLUTION IMAGE CAROUSEL
-========================================================= */
 
-const solutionCarouselImage = document.getElementById(
-    "solution-carousel-image"
+
+// =========================================================
+// CHALLENGE IMAGE CAROUSEL
+// =========================================================
+
+const pageImageData =
+  caseStudyImages[currentPage] || {
+    challenge: [],
+    solution: []
+  };
+
+initializeCarousel({
+  images: pageImageData.challenge,
+
+  imageElement: document.getElementById(
+    'challenge-carousel-image'
+  ),
+
+  captionElement: document.getElementById(
+    'challenge-carousel-caption'
+  ),
+
+  counterElement: document.getElementById(
+    'challenge-carousel-counter'
+  ),
+
+  previousButton: document.getElementById(
+    'challenge-prev-button'
+  ),
+
+  nextButton: document.getElementById(
+    'challenge-next-button'
+  )
+});
+
+
+// =========================================================
+// SOLUTION IMAGE CAROUSEL
+// =========================================================
+
+initializeCarousel({
+  images: pageImageData.solution,
+
+  imageElement: document.getElementById(
+    'solution-carousel-image'
+  ),
+
+  captionElement: document.getElementById(
+    'solution-carousel-caption'
+  ),
+
+  counterElement: document.getElementById(
+    'solution-carousel-counter'
+  ),
+
+  previousButton: document.getElementById(
+    'solution-prev-button'
+  ),
+
+  nextButton: document.getElementById(
+    'solution-next-button'
+  )
+});
+
+// =========================================================
+// HEADER QUICK LINKS ON SCROLL
+// =========================================================
+
+const headerQuickLinks = document.getElementById(
+  'header-quick-links'
 );
 
-const solutionCarouselCaption = document.getElementById(
-    "solution-carousel-caption"
-);
+if (headerQuickLinks) {
+  const showQuickLinksAfter = 400;
 
-const solutionCarouselCounter = document.getElementById(
-    "solution-carousel-counter"
-);
+  function updateHeaderQuickLinks() {
+    const shouldShow =
+      window.scrollY > showQuickLinksAfter;
 
-const solutionPreviousButton = document.getElementById(
-    "solution-prev-button"
-);
+    headerQuickLinks.style.opacity =
+      shouldShow ? '1' : '0';
 
-const solutionNextButton = document.getElementById(
-    "solution-next-button"
-);
+    headerQuickLinks.style.transform =
+      shouldShow
+        ? 'translateY(0)'
+        : 'translateY(8px)';
 
-if (
-    solutionCarouselImage &&
-    solutionCarouselCaption &&
-    solutionCarouselCounter &&
-    solutionPreviousButton &&
-    solutionNextButton
-) {
-    const solutionImages = [
-        {
-            src: "assets/images/bridge-solution-1.png",
-            alt: "Bridge dashboard solution example 1",
-            caption: "Here is where I first started learning."
-        },
-        {
-            src: "assets/images/bridge-solution-2.png",
-            alt: "Bridge dashboard solution example 2",
-            caption: "Then much of my help and ideas came from this guy. Much respect."
-        },
-        {
-            src: "assets/images/bridge-solution-3.png",
-            alt: "Bridge dashboard solution example 3",
-            caption: "Example of where I would get my icons, or I would just make them in Adobe photoshop/Canva."
-        },
-        {
-            src: "https://www.spguides.com/wp-content/uploads/2024/02/Change-Data-Type-in-Power-BI.jpg",
-            alt: "Bridge dashboard solution example 4",
-            caption: "Where the transformation of data happend. A lot of cleaning, a lot of sorting."
-        }
-    ];
+    headerQuickLinks.style.pointerEvents =
+      shouldShow ? 'auto' : 'none';
 
-    let currentSolutionImage = 0;
+    headerQuickLinks.setAttribute(
+      'aria-hidden',
+      String(!shouldShow)
+    );
+  }
 
-    function updateSolutionCarousel() {
-        const selectedImage =
-            solutionImages[currentSolutionImage];
+  window.addEventListener(
+    'scroll',
+    updateHeaderQuickLinks,
+    { passive: true }
+  );
 
-        solutionCarouselImage.src = selectedImage.src;
-        solutionCarouselImage.alt = selectedImage.alt;
-        solutionCarouselCaption.textContent =
-            selectedImage.caption;
+  window.addEventListener(
+    'resize',
+    updateHeaderQuickLinks
+  );
 
-        solutionCarouselCounter.textContent =
-            `${currentSolutionImage + 1} / ${solutionImages.length}`;
-    }
-
-    solutionPreviousButton.addEventListener("click", () => {
-        currentSolutionImage =
-            (currentSolutionImage - 1 + solutionImages.length) %
-            solutionImages.length;
-
-        updateSolutionCarousel();
-    });
-
-    solutionNextButton.addEventListener("click", () => {
-        currentSolutionImage =
-            (currentSolutionImage + 1) %
-            solutionImages.length;
-
-        updateSolutionCarousel();
-    });
-
-    updateSolutionCarousel();
+  updateHeaderQuickLinks();
 }

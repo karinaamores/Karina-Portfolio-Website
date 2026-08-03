@@ -1,0 +1,562 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>ECNL Scheduling Engine | Karina Esquivel</title>
+
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+
+    <!-- Lucide Icons -->
+    <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js"></script>
+
+    <!-- Fonts -->
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Fraunces:opsz,wght@9.144,600;9.144,700&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Custom CSS -->
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+</head>
+
+<body
+    data-page="ecnl-scheduling-engine"
+    data-template-id="__page-root"
+    class="w-full min-h-screen grain"
+    style="background: linear-gradient(rgb(7, 20, 23), rgb(9, 25, 29));"
+>
+
+    <div class="w-full">
+
+        <!-- =====================================================
+             HEADER
+        ====================================================== -->
+
+        <header
+            class="sticky top-0 z-50 w-full border-b border-white/10 bg-gradient-to-b from-[#0c1f23] to-[#09191d] backdrop-blur-md"
+        >
+            <div
+                class="max-w-[1400px] mx-auto px-6 lg:px-10 py-5 flex items-center justify-between gap-6"
+            >
+
+                <!-- Name -->
+                <a
+                    href="index.html"
+                    class="canva-link flex items-center gap-3"
+                    aria-label="Return to homepage"
+                >
+                    <div class="w-2.5 h-2.5 rounded-full bg-[#8dd4c5]"></div>
+
+                    <p
+                        id="brand-name"
+                        data-template-id="brand-name"
+                        class="canva-text uppercase tracking-[0.28em] text-xs text-[#b7c5c7]"
+                    >
+                        Karina Esquivel
+                    </p>
+                </a>
+
+                <!-- Back to Portfolio -->
+                <nav class="flex items-center gap-4">
+
+                    <a
+                        href="portfolio.html"
+                        class="canva-link btn-outline text-xs uppercase tracking-[0.18em]"
+                    >
+                        <i
+                            data-lucide="arrow-left"
+                            class="w-4 h-4"
+                        ></i>
+
+                        <span>Back to Portfolio</span>
+                    </a>
+
+                </nav>
+
+            </div>
+        </header>
+
+        <!-- =====================================================
+             MAIN CONTENT
+        ====================================================== -->
+
+        <main class="w-full">
+
+            <div id="case-study-view">
+
+                <section
+                    class="max-w-[1400px] mx-auto px-6 lg:px-10 pt-16 lg:pt-24 pb-20"
+                >
+
+                    <!-- =================================================
+                         HERO
+                    ================================================== -->
+
+                    <div class="mb-16">
+
+                        <div class="max-w-5xl">
+
+                            <p
+                                class="uppercase tracking-[0.28em] text-xs text-[#8dd4c5] mb-4"
+                            >
+                                Case Study
+                            </p>
+
+                            <h1
+                                class="display text-[3.2rem] sm:text-[5rem] lg:text-[6rem] leading-[0.98] text-[#f3efe6]"
+                            >
+                                ECNL Scheduling Engine
+                            </h1>
+
+                            <p
+                                class="mt-6 text-xl text-[#b7c5c7] max-w-3xl leading-8"
+                            >
+                                A scheduling system built to automate tournament
+                                and league scheduling, reduce manual effort, and
+                                generate balanced game schedules using custom
+                                scheduling logic.
+                            </p>
+
+                            <!-- Technology Badges -->
+                            <div class="flex flex-wrap gap-3 mt-8">
+
+                                <span class="px-4 py-2 rounded-full border border-white/15">
+                                    Python
+                                </span>
+
+                                <span class="px-4 py-2 rounded-full border border-white/15">
+                                    Google
+                                </span>
+
+                                <span class="px-4 py-2 rounded-full border border-white/15">
+                                    Automation
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <!-- =================================================
+                         CASE STUDY CONTENT
+                    ================================================== -->
+
+                    <div
+                        id="case-study-content"
+                        class="space-y-12"
+                    >
+
+                        <!-- =============================================
+                             THE CHALLENGE
+                        ============================================== -->
+
+                        <div class="grid md:grid-cols-2 gap-8 items-start">
+
+                            <!-- Challenge Text -->
+                            <div>
+
+                                <h2
+                                    data-template-id="case-study-section-1-title"
+                                    class="canva-text display text-2xl mb-4"
+                                    style="color: rgb(243, 239, 230); font-weight: 700; font-style: normal; font-size: 24px;"
+                                >
+                                    The Challenge
+                                </h2>
+
+                                <p
+                                    data-template-id="case-study-section-1-content"
+                                    class="canva-text text-[#b7c5c7] leading-7"
+                                    style="color: rgb(183, 197, 199); font-weight: 400; font-style: normal; font-size: 16px; line-height: 1.6;"
+                                >
+                                    The project presented two significant challenges:<br><br>
+                                    First, creating balanced schedules for ECNL competitions
+                                    required accounting for team availability, team
+                                    ranking, travel considerations, league rules, and
+                                    numerous scheduling constraints that were traditionally
+                                    managed through a time-consuming manual process.
+                                    Building schedules manually often required multiple
+                                    revisions and significant coordination.<br><br>
+                                    Second, at the time, I had only minimal Python experience from the
+                                    iXperience Data Analytics Bootcamp and had never built a
+                                    software application—let alone an automated scheduling
+                                    system. Although, the timeline was only seven months, I
+                                    was confident that with extensive research, persistence,
+                                    and guidance from professors, the development of a
+                                    solution that automated much of the
+                                    scheduling process would be attainable.
+                                </p>
+
+                            </div>
+
+                            <!-- Challenge Image Carousel -->
+                            <div
+                                id="challenge-carousel"
+                                class="relative overflow-hidden rounded-2xl border border-white/10 bg-[#071417]"
+                            >
+
+                                <!-- Current Image -->
+                                <div
+                                    class="relative aspect-[4/3] min-h-[320px]"
+                                >
+
+                                    <img
+                                        id="challenge-carousel-image"
+                                        loading="lazy"
+                                        class="absolute inset-0 w-full h-full object-contain p-4"
+                                        src="https://media1.tenor.com/images/150a384449082125a8bffbd805b9b856/tenor.gif?itemid=5499082"
+                                        alt="Me on the phone listening to this opportunity and knowing it CAN be done."
+                                    >
+
+                                    <!-- Previous Image -->
+                                    <button
+                                        id="challenge-prev-button"
+                                        type="button"
+                                        class="absolute left-3 top-1/2 -translate-y-1/2 z-10 flex h-11 w-11 items-center justify-center rounded-full border border-white/20 bg-[#071417]/85 text-white backdrop-blur-sm transition hover:border-[#8dd4c5] hover:text-[#8dd4c5]"
+                                        aria-label="View previous challenge image"
+                                    >
+                                        <i
+                                            data-lucide="chevron-left"
+                                            class="h-6 w-6"
+                                        ></i>
+                                    </button>
+
+                                    <!-- Next Image -->
+                                    <button
+                                        id="challenge-next-button"
+                                        type="button"
+                                        class="absolute right-3 top-1/2 -translate-y-1/2 z-10 flex h-11 w-11 items-center justify-center rounded-full border border-white/20 bg-[#071417]/85 text-white backdrop-blur-sm transition hover:border-[#8dd4c5] hover:text-[#8dd4c5]"
+                                        aria-label="View next challenge image"
+                                    >
+                                        <i
+                                            data-lucide="chevron-right"
+                                            class="h-6 w-6"
+                                        ></i>
+                                    </button>
+
+                                </div>
+
+                                <!-- Challenge Image Information -->
+                                <div
+                                    class="flex items-center justify-between gap-4 border-t border-white/10 px-5 py-4"
+                                >
+
+                                    <p
+                                        id="challenge-carousel-caption"
+                                        class="canva-text small-copy"
+                                    >
+                                        Me on the phone listening to this opportunity and knowing it CAN be done.
+                                    </p>
+
+                                    <p
+                                        id="challenge-carousel-counter"
+                                        class="shrink-0 text-xs uppercase tracking-[0.18em] text-[#8dd4c5]"
+                                        aria-live="polite"
+                                    >
+                                        1 / 4
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <!-- =============================================
+                             THE SOLUTION
+                        ============================================== -->
+
+                        <div class="grid md:grid-cols-2 gap-8 items-start">
+
+                            <!-- Solution Image Carousel -->
+                            <div
+                                id="solution-carousel"
+                                class="relative overflow-hidden rounded-2xl border border-white/10 bg-[#071417] order-2 md:order-1"
+                            >
+
+                                <!-- Current Image -->
+                                <div
+                                    class="relative aspect-[4/3] min-h-[320px]"
+                                >
+
+                                    <img
+                                        id="solution-carousel-image"
+                                        loading="lazy"
+                                        class="absolute inset-0 w-full h-full object-contain p-4"
+                                        src="assets/images/ecnl-solution-1.png"
+                                        alt="The new ECNL dashboard tailored to their organization."
+                                    >
+
+                                    <!-- Previous Image -->
+                                    <button
+                                        id="solution-prev-button"
+                                        type="button"
+                                        class="absolute left-3 top-1/2 -translate-y-1/2 z-10 flex h-11 w-11 items-center justify-center rounded-full border border-white/20 bg-[#071417]/85 text-white backdrop-blur-sm transition hover:border-[#8dd4c5] hover:text-[#8dd4c5]"
+                                        aria-label="View previous solution image"
+                                    >
+                                        <i
+                                            data-lucide="chevron-left"
+                                            class="h-6 w-6"
+                                        ></i>
+                                    </button>
+
+                                    <!-- Next Image -->
+                                    <button
+                                        id="solution-next-button"
+                                        type="button"
+                                        class="absolute right-3 top-1/2 -translate-y-1/2 z-10 flex h-11 w-11 items-center justify-center rounded-full border border-white/20 bg-[#071417]/85 text-white backdrop-blur-sm transition hover:border-[#8dd4c5] hover:text-[#8dd4c5]"
+                                        aria-label="View next solution image"
+                                    >
+                                        <i
+                                            data-lucide="chevron-right"
+                                            class="h-6 w-6"
+                                        ></i>
+                                    </button>
+
+                                </div>
+
+                                <!-- Solution Image Information -->
+                                <div
+                                    class="flex items-center justify-between gap-4 border-t border-white/10 px-5 py-4"
+                                >
+
+                                    <p
+                                        id="solution-carousel-caption"
+                                        class="canva-text small-copy"
+                                    >
+                                        The new ECNL dashboard tailored to their organization.
+                                    </p>
+
+                                    <p
+                                        id="solution-carousel-counter"
+                                        class="shrink-0 text-xs uppercase tracking-[0.18em] text-[#8dd4c5]"
+                                        aria-live="polite"
+                                    >
+                                        1 / 4
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+                            <!-- Solution Text -->
+                            <div class="order-1 md:order-2">
+
+                                <h2
+                                    data-template-id="case-study-section-2-title"
+                                    class="canva-text display text-2xl mb-4"
+                                    style="color: rgb(243, 239, 230); font-weight: 700; font-style: normal; font-size: 24px;"
+                                >
+                                    The Solution
+                                </h2>
+
+                                <p
+                                    data-template-id="case-study-section-2-content"
+                                    class="canva-text text-[#b7c5c7] leading-7"
+                                    style="color: rgb(183, 197, 199); font-weight: 400; font-style: normal; font-size: 16px; line-height: 1.6;"
+                                >
+                                    The ECNL Scheduling Engine automated much of
+                                    the scheduling process by organizing league
+                                    constraints into a repeatable workflow. The
+                                    application generated schedules more
+                                    efficiently while allowing users to review,
+                                    adjust, and validate results before finalizing
+                                    the schedule. Automation reduced repetitive
+                                    work while improving scheduling consistency.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                        <!-- =============================================
+                             IMPACT AND OUTCOMES
+                        ============================================== -->
+
+                        <div>
+
+                            <h2
+                                data-template-id="case-study-section-3-title"
+                                class="canva-text display text-2xl mb-4"
+                                style="color: rgb(243, 239, 230); font-weight: 700; font-style: normal; font-size: 24px;"
+                            >
+                                Impact &amp; Outcomes
+                            </h2>
+
+                            <p
+                                data-template-id="case-study-section-3-content"
+                                class="canva-text text-[#b7c5c7] leading-7 max-w-3xl"
+                                style="color: rgb(183, 197, 199); font-weight: 400; font-style: normal; font-size: 16px; line-height: 1.6;"
+                            >
+                                The Scheduling Engine significantly reduced the manual effort required to
+                                create balanced competition schedules by automating repetitive scheduling
+                                tasks and organizing complex constraints into a structured workflow. As the
+                                project evolved, I incorporated an interactive dashboard that gave the
+                                organization real-time insights into each tournament. Users could quickly
+                                view annual schedules, compare match difficulty based on team rankings,
+                                identify the highest- and lowest-ranked teams attending, and analyze how
+                                many teams from each region were participating.<br><br> What began as a scheduling
+                                tool ultimately became a decision-support platform that streamlined planning
+                                while providing valuable competitive insights. In the future, I would like to
+                                make the UI more appealing to make it feel more professional and sporty. A more 
+                                custom feel to make the client feel as if this is made for them only. Also, anytime
+                                I catch myself inputting or basically dragging my mouse to click something in 
+                                the process, I try to figure out how in this system can it be automated.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <!-- =================================================
+                         PROJECT DETAILS
+                    ================================================== -->
+
+                    <div
+                        class="mt-16 rounded-[26px] border border-white/10 bg-[#10282d] p-6 md:p-8"
+                    >
+
+                        <h2
+                            data-template-id="case-study-meta-title"
+                            class="canva-text display text-2xl mb-6"
+                            style="color: rgb(243, 239, 230); font-weight: 700; font-style: normal; font-size: 24px;"
+                        >
+                            Project Details
+                        </h2>
+
+                        <div class="grid md:grid-cols-3 gap-8">
+
+                            <!-- Tools -->
+                            <div>
+
+                                <p
+                                    data-template-id="case-study-meta-tools-label"
+                                    class="canva-text text-xs uppercase tracking-[0.18em] text-[#8dd4c5] mb-2"
+                                    style="color: rgb(141, 212, 197); font-weight: 700; font-style: normal; font-size: 12px; letter-spacing: 0.18rem;"
+                                >
+                                    Tools &amp; Technologies
+                                </p>
+
+                                <p
+                                    data-template-id="case-study-meta-tools"
+                                    class="canva-text text-[#b7c5c7]"
+                                    style="color: rgb(183, 197, 199); font-weight: 400; font-style: normal; font-size: 16px;"
+                                >
+                                    Python, Tkinter, Pandas, Scheduling Algorithms<br>
+                                    Google API, Google App Script
+                                </p>
+
+                            </div>
+
+                            <!-- Timeline -->
+                            <div>
+
+                                <p
+                                    data-template-id="case-study-meta-timeline-label"
+                                    class="canva-text text-xs uppercase tracking-[0.18em] text-[#8dd4c5] mb-2"
+                                    style="color: rgb(141, 212, 197); font-weight: 700; font-style: normal; font-size: 12px; letter-spacing: 0.18rem;"
+                                >
+                                    Occurance
+                                </p>
+
+                                <p
+                                    data-template-id="case-study-meta-timeline"
+                                    class="canva-text text-[#b7c5c7]"
+                                    style="color: rgb(183, 197, 199); font-weight: 400; font-style: normal; font-size: 16px;"
+                                >
+                                    Yearly
+                                </p>
+
+                            </div>
+
+                            <!-- Results -->
+                            <div>
+
+                                <p
+                                    data-template-id="case-study-meta-impact-label"
+                                    class="canva-text text-xs uppercase tracking-[0.18em] text-[#8dd4c5] mb-2"
+                                    style="color: rgb(141, 212, 197); font-weight: 700; font-style: normal; font-size: 12px; letter-spacing: 0.18rem;"
+                                >
+                                    Key Results
+                                </p>
+
+                                <p
+                                    data-template-id="case-study-meta-impact"
+                                    class="canva-text text-[#b7c5c7]"
+                                    style="color: rgb(183, 197, 199); font-weight: 400; font-style: normal; font-size: 16px;"
+                                >
+                                    Automated League Schedule Generation
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+            </div>
+
+        </main>
+
+        <!-- =====================================================
+             FOOTER
+        ====================================================== -->
+
+        <footer class="border-t border-white/10">
+
+            <div
+                class="max-w-[1400px] mx-auto px-6 lg:px-10 py-8 flex flex-col md:flex-row justify-between gap-4"
+            >
+
+                <p
+                    data-template-id="footer-left"
+                    class="canva-text text-sm text-[#9fb2b5]"
+                    style="color: rgb(159, 178, 181); font-weight: 400; font-style: normal; font-size: 14px;"
+                >
+                    Built at the intersection of logic, empathy, and design.
+                </p>
+
+                <p
+                    data-template-id="footer-right"
+                    class="canva-text text-sm text-[#9fb2b5]"
+                    style="color: rgb(159, 178, 181); font-weight: 400; font-style: normal; font-size: 14px;"
+                >
+                    Soccer • Travel • Cooking • Community
+                </p>
+
+            </div>
+
+        </footer>
+
+    </div>
+
+    <!-- Main JavaScript -->
+    <script src="js/main.js"></script>
+
+</body>
+
+</html>
