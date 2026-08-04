@@ -32,6 +32,10 @@
         rel="stylesheet"
     >
 
+    <script>
+        document.documentElement.classList.add('js-enabled');
+    </script>
+
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css">
 </head>
@@ -279,7 +283,8 @@
 
                                 <img
                                     data-template-id="hero-image"
-                                    loading="lazy"
+                                    fetchpriority="high"
+                                    decoding="async"
                                     class="canva-image absolute inset-0 w-full h-full object-cover"
                                     src="https://images.pexels.com/photos/10325707/pexels-photo-10325707.png"
                                     alt="Abstract orange technology network on a dark background"
@@ -605,7 +610,7 @@
                                                     performance analytics work
                                                     across a $14B infrastructure
                                                     portfolio while shaping clearer,
-                                                    more actionable statewide
+                                                    more actionable tools used for statewide
                                                     planning decisions.
                                                 </p>
 
@@ -616,6 +621,7 @@
                                                 <img
                                                     data-template-id="job-1-image"
                                                     loading="lazy"
+                                                    decoding="async"
                                                     class="canva-image absolute inset-0 w-full h-full object-cover"
                                                     src="https://images.pexels.com/photos/29617301/pexels-photo-29617301.jpeg"
                                                     alt="Aerial view of a highway interchange"
@@ -677,10 +683,10 @@
                                                     data-template-id="job-2-summary"
                                                     class="canva-text body-copy mt-4"
                                                 >
-                                                    Designed intelligent scheduling
+                                                    Designed an intelligent scheduling
                                                     systems and live analytics tools
                                                     that translate complex logic into
-                                                    practical, user-friendly workflows.
+                                                    practical, user-friendly visuals.
                                                 </p>
 
                                             </div>
@@ -690,6 +696,7 @@
                                                 <img
                                                     data-template-id="job-2-image"
                                                     loading="lazy"
+                                                    decoding="async"
                                                     class="canva-image absolute inset-0 w-full h-full object-cover"
                                                     src="https://images.pexels.com/photos/10816120/pexels-photo-10816120.jpeg"
                                                     alt="Programming code displayed on a computer screen"
@@ -771,6 +778,7 @@
                                                     <img
                                                         data-template-id="job-3-image"
                                                         loading="lazy"
+                                                        decoding="async"
                                                         class="canva-image absolute inset-0 w-full h-full object-cover"
                                                         src="https://tse4.mm.bing.net/th/id/OIP.fos76FBn2pTD3hpsKJDqYwHaHa?r=0&rs=1&pid=ImgDetMain&o=7&rm=3"
                                                         alt="Laptop displaying design and data visualization work"
@@ -846,6 +854,7 @@
                                                     <img
                                                         data-template-id="job-4-image"
                                                         loading="lazy"
+                                                        decoding="async"
                                                         class="canva-image absolute inset-0 w-full h-full object-cover"
                                                         src="https://mgmagazine.com/wp-content/uploads/2021/12/amnesia_logo_mg_Magazine_mgretailler-1392x928.jpg.webp"
                                                         alt="Analytics dashboard displayed on a computer"
@@ -921,6 +930,7 @@
                                                     <img
                                                         data-template-id="job-5-image"
                                                         loading="lazy"
+                                                        decoding="async"
                                                         class="canva-image absolute inset-0 w-full h-full object-cover"
                                                         src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_Y58awnBoPXaAp17e-w1LqstopAVs47z-t6v4mzBGsw&s=10"
                                                         alt="Professional reviewing charts on a laptop"
@@ -1075,7 +1085,7 @@
                                         data-template-id="education-3-school"
                                         class="canva-text text-[#d8a761] mt-2 text-sm"
                                     >
-                                        State Fair Community College
+                                        State Fair Community College • Sedalia, MO
                                     </p>
 
                                     <p
@@ -1252,7 +1262,7 @@
     </div>
 
     <!-- Custom JavaScript -->
-    <script src="js/main.js"></script>
+    <script src="js/main.js" defer></script>
 
 </body>
 </html>

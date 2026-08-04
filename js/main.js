@@ -1,3 +1,5 @@
+document.documentElement.classList.add('js-enabled');
+
 // =========================================================
 // LUCIDE ICONS
 // =========================================================
@@ -20,28 +22,33 @@ const timelineExpandedJobs = document.getElementById(
 );
 
 if (timelineExpandButton && timelineExpandedJobs) {
-  timelineExpandButton.addEventListener('click', () => {
-    const isHidden =
-      timelineExpandedJobs.classList.contains('hidden');
 
-    const buttonLabel = timelineExpandButton.querySelector(
-      '[data-template-id="timeline-expand-label"]'
+  timelineExpandButton.addEventListener('click', () => {
+
+    const isHidden =
+      timelineExpandedJobs.classList.contains(
+        'hidden'
+      );
+
+    timelineExpandedJobs.classList.toggle(
+      'hidden',
+      !isHidden
     );
 
-    if (isHidden) {
-      timelineExpandedJobs.classList.remove('hidden');
+    const buttonLabel =
+      timelineExpandButton.querySelector(
+        '[data-template-id="timeline-expand-label"]'
+      );
 
-      if (buttonLabel) {
-        buttonLabel.textContent = 'Show Less';
-      }
-    } else {
-      timelineExpandedJobs.classList.add('hidden');
-
-      if (buttonLabel) {
-        buttonLabel.textContent = 'More Experience';
-      }
+    if (buttonLabel) {
+      buttonLabel.textContent =
+        isHidden
+          ? 'Show Less'
+          : 'More Experience';
     }
+
   });
+
 }
 
 
@@ -52,10 +59,22 @@ if (timelineExpandButton && timelineExpandedJobs) {
 let revealObserver = null;
 
 function initializeRevealAnimations() {
+
   const revealElements =
-    document.querySelectorAll('.reveal');
+    document.querySelectorAll(
+      '.reveal:not(.visible)'
+    );
 
   if (!revealElements.length) {
+    return;
+  }
+
+  if (!('IntersectionObserver' in window)) {
+
+    revealElements.forEach((element) => {
+      element.classList.add('visible');
+    });
+
     return;
   }
 
@@ -64,290 +83,348 @@ function initializeRevealAnimations() {
   }
 
   revealObserver = new IntersectionObserver(
+
     (entries) => {
+
       entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          revealObserver.unobserve(entry.target);
+
+        if (!entry.isIntersecting) {
+          return;
         }
+
+        entry.target.classList.add(
+          'visible'
+        );
+
+        revealObserver.unobserve(
+          entry.target
+        );
+
       });
+
     },
+
     {
-      threshold: 0.08,
-      rootMargin: '0px 0px -40px 0px'
+      threshold: 0.05,
+      rootMargin:
+        '120px 0px 120px 0px'
     }
+
   );
 
   revealElements.forEach((element) => {
+
     const position =
       element.getBoundingClientRect();
 
-    const isVisibleNow =
-      position.top < window.innerHeight &&
-      position.bottom > 0;
+    const shouldShowImmediately =
 
-    if (isVisibleNow) {
-      element.classList.add('visible');
+      position.top <
+        window.innerHeight + 120 &&
+
+      position.bottom > -120;
+
+    if (shouldShowImmediately) {
+
+      element.classList.add(
+        'visible'
+      );
+
     } else {
-      revealObserver.observe(element);
+
+      revealObserver.observe(
+        element
+      );
+
     }
+
   });
+
 }
 
 initializeRevealAnimations();
 
-window.addEventListener('pageshow', () => {
-  initializeRevealAnimations();
-});
+window.addEventListener(
+  'pageshow',
+  initializeRevealAnimations
+);
 
 
 // =========================================================
 // SMOOTH SCROLL FOR INTERNAL LINKS
 // =========================================================
 
-document.querySelectorAll('a[href^="#"]').forEach((link) => {
-  link.addEventListener('click', (event) => {
-    const targetId = link.getAttribute('href');
+document
+  .querySelectorAll('a[href^="#"]')
+  .forEach((link) => {
 
-    if (!targetId || targetId === '#') {
-      return;
-    }
+    link.addEventListener(
+      'click',
+      (event) => {
 
-    const targetSection = document.querySelector(targetId);
+        const targetId =
+          link.getAttribute('href');
 
-    if (!targetSection) {
-      return;
-    }
+        if (
+          !targetId ||
+          targetId === '#'
+        ) {
+          return;
+        }
 
-    event.preventDefault();
+        const targetSection =
+          document.querySelector(
+            targetId
+          );
 
-    targetSection.scrollIntoView({
-      behavior: 'smooth',
-      block: 'start'
-    });
+        if (!targetSection) {
+          return;
+        }
 
-    history.replaceState(null, '', targetId);
+        event.preventDefault();
+
+        targetSection.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
+
+        history.replaceState(
+          null,
+          '',
+          targetId
+        );
+
+      }
+    );
+
   });
-});
 
 
 // =========================================================
-// SIDE NAVIGATION SCROLL HIGHLIGHT
+// SIDE NAVIGATION + HEADER QUICK LINKS
 // =========================================================
 
-const sideNavLinks = document.querySelectorAll(
-  '.nav-link[data-section]'
-);
+const sideNavLinks =
+  document.querySelectorAll(
+    '.nav-link[data-section]'
+  );
 
-const trackedSections = Array.from(sideNavLinks)
-  .map((link) =>
-    document.getElementById(link.dataset.section)
-  )
-  .filter(Boolean);
+const trackedSections =
+  Array.from(sideNavLinks)
+    .map((link) =>
+      document.getElementById(
+        link.dataset.section
+      )
+    )
+    .filter(Boolean);
+
+const headerQuickLinks =
+  document.getElementById(
+    'header-quick-links'
+  );
+
+const showQuickLinksAfter = 400;
+
+let scrollUpdateRequested = false;
 
 function updateActiveSideNavigation() {
+
   if (!trackedSections.length) {
     return;
   }
 
   const activationPoint = 200;
-  let currentSectionId = trackedSections[0].id;
 
-  trackedSections.forEach((section) => {
-    const sectionTop =
-      section.getBoundingClientRect().top;
+  let currentSectionId =
+    trackedSections[0].id;
 
-    if (sectionTop <= activationPoint) {
-      currentSectionId = section.id;
+  trackedSections.forEach(
+    (section) => {
+
+      if (
+        section.getBoundingClientRect().top <=
+        activationPoint
+      ) {
+        currentSectionId =
+          section.id;
+      }
+
     }
-  });
+  );
 
   const nearBottom =
-    window.innerHeight + window.scrollY >=
-    document.documentElement.scrollHeight - 50;
+
+    window.innerHeight +
+      window.scrollY >=
+
+    document.documentElement
+      .scrollHeight - 50;
 
   if (nearBottom) {
+
     currentSectionId =
-      trackedSections[trackedSections.length - 1].id;
+      trackedSections[
+        trackedSections.length - 1
+      ].id;
+
   }
 
   sideNavLinks.forEach((link) => {
+
     link.classList.toggle(
       'active',
-      link.dataset.section === currentSectionId
+      link.dataset.section ===
+        currentSectionId
     );
+
   });
+
+}
+
+function updateHeaderQuickLinks() {
+
+  if (!headerQuickLinks) {
+    return;
+  }
+
+  const shouldShow =
+    window.scrollY >
+    showQuickLinksAfter;
+
+  headerQuickLinks.style.opacity =
+    shouldShow ? '1' : '0';
+
+  headerQuickLinks.style.transform =
+    shouldShow
+      ? 'translateY(0)'
+      : 'translateY(8px)';
+
+  headerQuickLinks.style.pointerEvents =
+    shouldShow
+      ? 'auto'
+      : 'none';
+
+  headerQuickLinks.setAttribute(
+    'aria-hidden',
+    String(!shouldShow)
+  );
+
+}
+
+function updateScrollFeatures() {
+
+  updateActiveSideNavigation();
+
+  updateHeaderQuickLinks();
+
+  scrollUpdateRequested = false;
+
+}
+
+function requestScrollFeatureUpdate() {
+
+  if (scrollUpdateRequested) {
+    return;
+  }
+
+  scrollUpdateRequested = true;
+
+  requestAnimationFrame(
+    updateScrollFeatures
+  );
+
 }
 
 window.addEventListener(
   'scroll',
-  updateActiveSideNavigation,
+  requestScrollFeatureUpdate,
   { passive: true }
 );
 
 window.addEventListener(
   'resize',
-  updateActiveSideNavigation
+  requestScrollFeatureUpdate
 );
 
-updateActiveSideNavigation();
+updateScrollFeatures();
 
 
 // =========================================================
-// CASE STUDY IMAGE DATA
+// GENERIC IMAGE CAROUSELS
 // =========================================================
 
-const currentPage = document.body.dataset.page || '';
+function parseCarouselImages(carouselElement) {
 
-const caseStudyImages = {
-  'bridge-condition': {
-    challenge: [
-      {
-        src: 'assets/images/bridge-challenge-1.png',
-        alt: 'Original bridge data example 1',
-        caption: 'Where bridge data is stored.'
-      },
-      {
-        src: 'assets/images/bridge-challenge-2.png',
-        alt: 'Original bridge data example 2',
-        caption: 'Additional bridge records from the source system.'
-      },
-      {
-        src: 'assets/images/bridge-challenge-3.png',
-        alt: 'Original bridge data example 3',
-        caption:
-          'Bridge condition information before dashboard development.'
-      },
-      {
-        src: 'assets/images/bridge-challenge-4.png',
-        alt: 'Original bridge data example 4',
-        caption:
-          'Complex data that users needed to interpret.'
-      }
-    ],
+  const imageData =
+    carouselElement.dataset.carouselImages;
 
-    solution: [
-      {
-        src: 'assets/images/bridge-solution-1.png',
-        alt: 'Bridge dashboard learning resource',
-        caption: 'Here is where I first started learning.'
-      },
-      {
-        src: 'assets/images/bridge-solution-2.png',
-        alt: 'Bridge dashboard design inspiration',
-        caption:
-          'Much of my early help and design inspiration came from this resource.'
-      },
-      {
-        src: 'assets/images/bridge-solution-3.png',
-        alt: 'Icons used during dashboard development',
-        caption:
-          'Icons were sourced here or created in Adobe Photoshop and Canva.'
-      },
-      {
-        src:
-          'https://www.spguides.com/wp-content/uploads/2024/02/Change-Data-Type-in-Power-BI.jpg',
-        alt: 'Power BI data transformation example',
-        caption:
-          'This represents the data-transformation stage, including cleaning, sorting, and formatting.'
-      }
-    ]
-  },
-
-  'amp-dashboard': {
-    challenge: [
-      {
-        src: 'assets/images/amp-challenge-1.png',
-        alt: 'Original AMP data and reporting example',
-        caption: 'The original AMP data and reporting process.'
-      },
-      {
-        src: 'assets/images/amp-challenge-2.png',
-        alt: 'Additional AMP reporting example',
-        caption:
-          'The existing AMP reporting structure before dashboard development.'
-      }
-    ],
-
-    solution: [
-      {
-        src: 'assets/images/amp-solution-1.png',
-        alt: 'AMP Dashboard solution example 1',
-        caption: 'The overall AMP Dashboard reporting view.'
-      },
-      {
-        src: 'assets/images/amp-solution-2.png',
-        alt: 'AMP Dashboard solution example 2',
-        caption:
-          'Interactive navigation between reporting sections.'
-      },
-      {
-        src: 'assets/images/amp-solution-3.png',
-        alt: 'AMP Dashboard solution example 3',
-        caption:
-          'Filters help users focus on specific districts and reporting areas.'
-      },
-      {
-        src: 'assets/images/amp-solution-4.png',
-        alt: 'AMP Dashboard solution example 4',
-        caption:
-          'Visual summaries make AMP results easier to understand.'
-      }
-    ]
-  },
-
-  'ecnl-scheduling-engine': {
-    challenge: [
-      {
-        src: 'https://media1.tenor.com/images/150a384449082125a8bffbd805b9b856/tenor.gif?itemid=5499082',
-        alt: 'Original ECNL manual scheduling process',
-        caption: 'Me on the phone listening to this opportunity and knowing it CAN be done.'
-      }
-    ],
-
-    solution: [
-      {
-        src: 'assets/images/ecnl-solution-1.png',
-        alt: 'ECNL tournament analytics dashboard',
-        caption:
-          "The new ECNL dashboard tailored to their organization."
-      }
-    ]
-  },
-
-  'tp-d-tracker': {
-    challenge: [
-      {
-        src: 'assets/images/tp-d-challenge-1.png',
-        alt: 'Original TP-D tracking process',
-        caption:
-          'The original assignment and project-tracking process.'
-      }
-    ],
-
-    solution: [
-      {
-        src: 'assets/images/tp-d-solution-1.png',
-        alt: 'TP-D Tracker solution',
-        caption:
-          'Centralized tracking, filtering, and workflow visibility.'
-      }
-    ]
+  if (!imageData) {
+    return [];
   }
-};
+
+  try {
+
+    const images =
+      JSON.parse(imageData);
+
+    return Array.isArray(images)
+      ? images
+      : [];
+
+  } catch (error) {
+
+    console.error(
+      'Unable to read carousel images.',
+      error
+    );
+
+    return [];
+  }
+
+}
+
 
 // =========================================================
-// REUSABLE CAROUSEL FUNCTION
+// INITIALIZE SINGLE CAROUSEL
 // =========================================================
 
-function initializeCarousel({
-  images,
-  imageElement,
-  captionElement,
-  counterElement,
-  previousButton,
-  nextButton
-}) {
+function initializeCarousel(carouselElement) {
+
+  const carouselName =
+    carouselElement.dataset.carousel;
+
+  if (!carouselName) {
+    return;
+  }
+
+  const images =
+    parseCarouselImages(carouselElement);
+
+  const imageElement =
+    document.getElementById(
+      `${carouselName}-carousel-image`
+    );
+
+  const captionElement =
+    document.getElementById(
+      `${carouselName}-carousel-caption`
+    );
+
+  const counterElement =
+    document.getElementById(
+      `${carouselName}-carousel-counter`
+    );
+
+  const previousButton =
+    document.getElementById(
+      `${carouselName}-prev-button`
+    );
+
+  const nextButton =
+    document.getElementById(
+      `${carouselName}-next-button`
+    );
+
   if (
     !imageElement ||
     !captionElement ||
@@ -358,28 +435,27 @@ function initializeCarousel({
     return;
   }
 
-  if (!Array.isArray(images) || images.length === 0) {
-    previousButton.classList.add('hidden');
-    nextButton.classList.add('hidden');
-    counterElement.textContent = '0 / 0';
+  if (!images.length) {
 
-    return;
-  }
+    previousButton.classList.add(
+      'hidden'
+    );
 
-  let currentImageIndex = 0;
-
-  function updateCarousel() {
-    const selectedImage = images[currentImageIndex];
-
-    imageElement.src = selectedImage.src;
-    imageElement.alt = selectedImage.alt;
-    captionElement.textContent = selectedImage.caption;
+    nextButton.classList.add(
+      'hidden'
+    );
 
     counterElement.textContent =
-      `${currentImageIndex + 1} / ${images.length}`;
+      '0 / 0';
+
+    return;
+
   }
 
-  const hasMultipleImages = images.length > 1;
+  let currentImage = 0;
+
+  const hasMultipleImages =
+    images.length > 1;
 
   previousButton.classList.toggle(
     'hidden',
@@ -391,131 +467,68 @@ function initializeCarousel({
     !hasMultipleImages
   );
 
-  previousButton.addEventListener('click', () => {
-    currentImageIndex =
-      (currentImageIndex - 1 + images.length) %
-      images.length;
+  function updateCarousel() {
 
-    updateCarousel();
-  });
+    const image =
+      images[currentImage];
 
-  nextButton.addEventListener('click', () => {
-    currentImageIndex =
-      (currentImageIndex + 1) %
-      images.length;
+    imageElement.src =
+      image.src;
 
-    updateCarousel();
-  });
+    imageElement.alt =
+      image.alt;
 
-  updateCarousel();
-}
+    captionElement.textContent =
+      image.caption;
 
+    counterElement.textContent =
+      `${currentImage + 1} / ${images.length}`;
 
-// =========================================================
-// CHALLENGE IMAGE CAROUSEL
-// =========================================================
-
-const pageImageData =
-  caseStudyImages[currentPage] || {
-    challenge: [],
-    solution: []
-  };
-
-initializeCarousel({
-  images: pageImageData.challenge,
-
-  imageElement: document.getElementById(
-    'challenge-carousel-image'
-  ),
-
-  captionElement: document.getElementById(
-    'challenge-carousel-caption'
-  ),
-
-  counterElement: document.getElementById(
-    'challenge-carousel-counter'
-  ),
-
-  previousButton: document.getElementById(
-    'challenge-prev-button'
-  ),
-
-  nextButton: document.getElementById(
-    'challenge-next-button'
-  )
-});
-
-
-// =========================================================
-// SOLUTION IMAGE CAROUSEL
-// =========================================================
-
-initializeCarousel({
-  images: pageImageData.solution,
-
-  imageElement: document.getElementById(
-    'solution-carousel-image'
-  ),
-
-  captionElement: document.getElementById(
-    'solution-carousel-caption'
-  ),
-
-  counterElement: document.getElementById(
-    'solution-carousel-counter'
-  ),
-
-  previousButton: document.getElementById(
-    'solution-prev-button'
-  ),
-
-  nextButton: document.getElementById(
-    'solution-next-button'
-  )
-});
-
-// =========================================================
-// HEADER QUICK LINKS ON SCROLL
-// =========================================================
-
-const headerQuickLinks = document.getElementById(
-  'header-quick-links'
-);
-
-if (headerQuickLinks) {
-  const showQuickLinksAfter = 400;
-
-  function updateHeaderQuickLinks() {
-    const shouldShow =
-      window.scrollY > showQuickLinksAfter;
-
-    headerQuickLinks.style.opacity =
-      shouldShow ? '1' : '0';
-
-    headerQuickLinks.style.transform =
-      shouldShow
-        ? 'translateY(0)'
-        : 'translateY(8px)';
-
-    headerQuickLinks.style.pointerEvents =
-      shouldShow ? 'auto' : 'none';
-
-    headerQuickLinks.setAttribute(
-      'aria-hidden',
-      String(!shouldShow)
-    );
   }
 
-  window.addEventListener(
-    'scroll',
-    updateHeaderQuickLinks,
-    { passive: true }
+  previousButton.addEventListener(
+    'click',
+    () => {
+
+      currentImage =
+        (currentImage - 1 + images.length) %
+        images.length;
+
+      updateCarousel();
+
+    }
   );
 
-  window.addEventListener(
-    'resize',
-    updateHeaderQuickLinks
+  nextButton.addEventListener(
+    'click',
+    () => {
+
+      currentImage =
+        (currentImage + 1) %
+        images.length;
+
+      updateCarousel();
+
+    }
   );
 
-  updateHeaderQuickLinks();
+  updateCarousel();
+
 }
+
+
+// =========================================================
+// INITIALIZE ALL CAROUSELS
+// =========================================================
+
+document
+  .querySelectorAll(
+    '[data-carousel]'
+  )
+  .forEach((carousel) => {
+
+    initializeCarousel(
+      carousel
+    );
+
+  });

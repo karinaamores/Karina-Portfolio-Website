@@ -30,9 +30,13 @@
     >
 
     <link
-        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Fraunces:opsz,wght@9.144,600;9.144,700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap"
         rel="stylesheet"
     >
+
+    <script>
+        document.documentElement.classList.add('js-enabled');
+    </script>
 
     <!-- Custom CSS -->
     <link
@@ -134,7 +138,7 @@
                                 class="mt-6 text-xl text-[#b7c5c7] max-w-3xl leading-8"
                             >
                                 A centralized tracking tool designed to organize
-                                Transportation Planning Division assignments,
+                                Transportation Planning Division progress,
                                 improve workflow visibility, and support clearer
                                 project coordination and reporting.
                             </p>
@@ -157,7 +161,7 @@
                                 <span
                                     class="px-4 py-2 rounded-full border border-white/15"
                                 >
-                                    Drupal
+                                    Oracle
                                 </span>
                             
                             </div>
@@ -200,11 +204,24 @@
                                     Transportation Planning Division assignments
                                     and project updates were being tracked across
                                     separate spreadsheets, emails, and individual
-                                    notes. This made it difficult to see ownership,
-                                    deadlines, workload, and overall progress in one
-                                    place. The lack of a consistent tracking process
-                                    also created extra follow-up work and made status
-                                    reporting more time-consuming.
+                                    notes. This made it tedious for each driver to 
+                                    update their progress. Some were quarterly, bi 
+                                    annually, or seasonal. This made it even more 
+                                    inconsistant and harder to see up-to-date numbers
+                                    Many times it was even harder to cross-train a 
+                                    new employee. Documentation was scarse.<br><br>
+                                    
+                                    Most of the progress charts were made through
+                                    Everviz. Useful, when you don't have another 
+                                    option, but it is definietly not user-friendly 
+                                    and at times can be finicky once published.
+                                    Other charts were made in word docs. Again, 
+                                    sometimes data points would not align and labels 
+                                    would be covered. Updating these was also very
+                                    hard as the connection between excel and word 
+                                    would sometimes break.
+
+                                    
                                 </p>
 
                             </div>
@@ -212,6 +229,8 @@
                             <!-- Challenge Image Carousel -->
                             <div
                                 id="challenge-carousel"
+                                data-carousel="challenge"
+                                data-carousel-images='[{"src":"assets/images/tp-d-challenge-1.png","alt":"Original TP-D tracking process","caption":"The original assignment and project-tracking process."}]'
                                 class="relative overflow-hidden rounded-2xl border border-white/10 bg-[#071417]"
                             >
 
@@ -223,6 +242,7 @@
                                     <img
                                         id="challenge-carousel-image"
                                         loading="lazy"
+                                        decoding="async"
                                         class="absolute inset-0 w-full h-full object-contain p-4"
                                         src="assets/images/tp-d-challenge-1.png"
                                         alt="Original TP-D assignment tracking process"
@@ -292,6 +312,8 @@
                             <!-- Solution Image Carousel -->
                             <div
                                 id="solution-carousel"
+                                data-carousel="solution"
+                                data-carousel-images='[{"src":"assets/images/tp-d-solution-1.png","alt":"TP-D Tracker solution","caption":"Centralized tracking, filtering, and workflow visibility."}]'
                                 class="relative overflow-hidden rounded-2xl border border-white/10 bg-[#071417] order-2 md:order-1"
                             >
 
@@ -303,6 +325,7 @@
                                     <img
                                         id="solution-carousel-image"
                                         loading="lazy"
+                                        decoding="async"
                                         class="absolute inset-0 w-full h-full object-contain p-4"
                                         src="assets/images/tp-d-solution-1.png"
                                         alt="TP-D Tracker solution example"
@@ -377,13 +400,15 @@
                                     class="canva-text text-[#b7c5c7] leading-7"
                                     style="color: rgb(183, 197, 199); font-weight: 400; font-style: normal; font-size: 16px; line-height: 1.6;"
                                 >
-                                    The TP-D Tracker brought assignments, project
-                                    details, ownership, due dates, and status updates
+                                    The TP-D Tracker brought progress
+                                    details, ownership, and status updates
                                     into one structured reporting tool. The solution
                                     was designed to make information easier to enter,
                                     filter, review, and communicate while giving the
                                     team a clearer view of active work and upcoming
-                                    priorities.
+                                    priorities. With some of these measures, a live 
+                                    database connection could be made. It turned those
+                                    measures into a live progress measure. 
                                 </p>
 
                             </div>
@@ -412,7 +437,7 @@
                                 The tracker created a more consistent and visible
                                 workflow for the division. Team members could more
                                 quickly identify assignment owners, deadlines,
-                                project status, and areas needing follow-up. The
+                                project status, data entry, and areas needing follow-up. The
                                 centralized structure reduced time spent searching
                                 through separate files and supported clearer status
                                 updates, workload awareness, and coordination across
@@ -457,7 +482,7 @@
                                     class="canva-text text-[#b7c5c7]"
                                     style="color: rgb(183, 197, 199); font-weight: 400; font-style: normal; font-size: 16px;"
                                 >
-                                    Power BI, Everviz, Drupal, SharePoint,<br>
+                                    Power BI, Everviz, SharePoint,<br>
                                     Oracle
 
                                 </p>
@@ -549,7 +574,7 @@
     </div>
 
     <!-- Main JavaScript -->
-    <script src="js/main.js"></script>
+    <script src="js/main.js" defer></script>
 
 </body>
 

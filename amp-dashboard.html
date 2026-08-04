@@ -30,9 +30,13 @@
     >
 
     <link
-        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Fraunces:opsz,wght@9.144,600;9.144,700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap"
         rel="stylesheet"
     >
+
+    <script>
+        document.documentElement.classList.add('js-enabled');
+    </script>
 
     <!-- Custom CSS -->
     <link
@@ -179,6 +183,8 @@
                             <iframe
                                 class="w-full aspect-video"
                                 src="https://www.youtube.com/embed/zKG7gbZvHLM"
+                                loading="lazy"
+                                decoding="async"
                                 title="AMP Dashboard Walkthrough"
                                 frameborder="0"
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -243,6 +249,8 @@
                             <!-- Challenge Image Carousel -->
                             <div
                                 id="challenge-carousel"
+                                data-carousel="challenge"
+                                data-carousel-images='[{"src":"assets/images/amp-challenge-1.png","alt":"Original AMP data and reporting example","caption":"The original AMP data and reporting process."},{"src":"assets/images/amp-challenge-2.png","alt":"Additional AMP reporting example","caption":"The existing AMP reporting structure before dashboard development."}]'
                                 class="relative overflow-hidden rounded-2xl border border-white/10 bg-[#071417]"
                             >
 
@@ -254,6 +262,7 @@
                                     <img
                                         id="challenge-carousel-image"
                                         loading="lazy"
+                                        decoding="async"
                                         class="absolute inset-0 w-full h-full object-contain p-4"
                                         src="assets/images/amp-challenge-1.png"
                                         alt="Original AMP data and reporting example"
@@ -323,6 +332,8 @@
                             <!-- Solution Image Carousel -->
                             <div
                                 id="solution-carousel"
+                                data-carousel="solution"
+                                data-carousel-images='[{"src":"assets/images/amp-solution-1.png","alt":"AMP Dashboard solution example 1","caption":"The overall AMP Dashboard reporting view."},{"src":"assets/images/amp-solution-2.png","alt":"AMP Dashboard solution example 2","caption":"Interactive navigation between reporting sections."},{"src":"assets/images/amp-solution-3.png","alt":"AMP Dashboard solution example 3","caption":"Filters help users focus on specific districts and reporting areas."},{"src":"assets/images/amp-solution-4.png","alt":"AMP Dashboard solution example 4","caption":"Visual summaries make AMP results easier to understand."}]'
                                 class="relative overflow-hidden rounded-2xl border border-white/10 bg-[#071417] order-2 md:order-1"
                             >
 
@@ -334,6 +345,7 @@
                                     <img
                                         id="solution-carousel-image"
                                         loading="lazy"
+                                        decoding="async"
                                         class="absolute inset-0 w-full h-full object-contain p-4"
                                         src="assets/images/bridge-solution-1.png"
                                         alt="AMP dashboard solution example"
@@ -585,7 +597,7 @@
     </div>
 
     <!-- Main JavaScript -->
-    <script src="js/main.js"></script>
+    <script src="js/main.js" defer></script>
 
 </body>
 

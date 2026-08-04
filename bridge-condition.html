@@ -30,9 +30,13 @@
     >
 
     <link
-        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Fraunces:opsz,wght@9.144,600;9.144,700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap"
         rel="stylesheet"
     >
+
+    <script>
+        document.documentElement.classList.add('js-enabled');
+    </script>
 
     <!-- Custom CSS -->
     <link
@@ -179,6 +183,7 @@
                             <iframe
                                 class="w-full aspect-video"
                                 src="https://www.youtube.com/embed/FneQbCwRjW0"
+                                loading="lazy"
                                 title="Bridge Condition Dashboard Walkthrough"
                                 frameborder="0"
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -242,6 +247,8 @@
                             <!-- Challenge Image Carousel -->
                             <div
                                 id="challenge-carousel"
+                                data-carousel="challenge"
+                                data-carousel-images='[{"src":"assets/images/bridge-challenge-1.png","alt":"Original bridge data example 1","caption":"Where bridge data is stored."},{"src":"assets/images/bridge-challenge-2.png","alt":"Original bridge data example 2","caption":"Additional bridge records from the source system."},{"src":"assets/images/bridge-challenge-3.png","alt":"Original bridge data example 3","caption":"Bridge condition information before dashboard development."},{"src":"assets/images/bridge-challenge-4.png","alt":"Original bridge data example 4","caption":"Complex data that users needed to interpret."}]'
                                 class="relative overflow-hidden rounded-2xl border border-white/10 bg-[#071417]"
                             >
 
@@ -253,6 +260,7 @@
                                     <img
                                         id="challenge-carousel-image"
                                         loading="lazy"
+                                        decoding="async"
                                         class="absolute inset-0 w-full h-full object-contain p-4"
                                         src="assets/images/bridge-challenge-1.png"
                                         alt="Original bridge data example 1"
@@ -321,6 +329,8 @@
                             <!-- Solution Image Carousel -->
                             <div
                                 id="solution-carousel"
+                                data-carousel="solution"
+                                data-carousel-images='[{"src":"assets/images/bridge-solution-1.png","alt":"Bridge dashboard learning resource","caption":"Here is where I first started learning."},{"src":"assets/images/bridge-solution-2.png","alt":"Bridge dashboard design inspiration","caption":"Much of my early help and design inspiration came from this resource."},{"src":"assets/images/bridge-solution-3.png","alt":"Icons used during dashboard development","caption":"Icons were sourced here or created in Adobe Photoshop and Canva."},{"src":"https://www.spguides.com/wp-content/uploads/2024/02/Change-Data-Type-in-Power-BI.jpg","alt":"Power BI data transformation example","caption":"This represents the data-transformation stage, including cleaning, sorting, and formatting."}]'
                                 class="relative overflow-hidden rounded-2xl border border-white/10 bg-[#071417] order-2 md:order-1"
                             >
 
@@ -332,6 +342,7 @@
                                     <img
                                         id="solution-carousel-image"
                                         loading="lazy"
+                                        decoding="async"
                                         class="absolute inset-0 w-full h-full object-contain p-4"
                                         src="assets/images/bridge-solution-1.png"
                                         alt="Bridge dashboard solution example 1"
@@ -598,7 +609,7 @@
     </div>
 
     <!-- Main JavaScript -->
-    <script src="js/main.js"></script>
+    <script src="js/main.js" defer></script>
 
 </body>
 
